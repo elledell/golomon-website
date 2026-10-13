@@ -21,14 +21,14 @@ export default function Navbar() {
       <nav className="w-full sticky top-0 z-40 bg-white shadow-sm border-b border-gray-100 transition-all duration-300">
         <div className="max-w-[1400px] mx-auto px-4 lg:px-12 flex justify-between items-center h-20">
           
-          {/* Brand Logo - Increased Size */}
+          {/* Brand Logo - Responsive Sizing */}
           <Link href="/" className="flex items-center group w-fit">
             <Image 
               src="/Wordmark.png" 
               alt="Golomon Wordmark" 
               width={220} 
               height={50} 
-              className="object-contain group-hover:scale-105 transition-transform duration-300"
+              className="w-[140px] sm:w-[180px] lg:w-[220px] h-auto object-contain group-hover:scale-105 transition-transform duration-300"
               priority
             />
           </Link>
@@ -48,10 +48,10 @@ export default function Navbar() {
 
           {/* Right Action Area (Desktop & Mobile) */}
           <div className="flex items-center gap-3">
-            {/* Contact Us Button */}
+            {/* Contact Us Button - Hidden on smaller screens */}
             <Link
               href="/contact"
-              className="bg-golomon-secondary text-white px-4 py-2.5 lg:px-6 lg:py-2.5 rounded-md text-sm font-semibold hover:bg-orange-700 transition-colors shadow-sm"
+              className="hidden sm:flex bg-golomon-secondary text-white px-4 py-2.5 lg:px-6 lg:py-2.5 rounded-md text-sm font-semibold hover:bg-orange-700 transition-colors shadow-sm"
             >
               Contact Us
             </Link>
@@ -84,12 +84,12 @@ export default function Navbar() {
       >
         <div className="flex justify-between items-center p-6 border-b border-gray-100">
           <div className="flex items-center">
-            {/* Mobile Brand Logo - Increased Size */}
+            {/* Mobile Brand Logo */}
             <Image 
               src="/Wordmark.png" 
               alt="Golomon Wordmark" 
-              width={170} 
-              height={40} 
+              width={150} 
+              height={34} 
               className="object-contain"
             />
           </div>
