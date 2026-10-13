@@ -118,8 +118,7 @@ export default function SolutionsPage() {
           
           {/* Left: Text & CTA */}
           <div className="flex flex-col">
-            <div className="flex items-center gap-3 mb-4">
-              <span className="h-[2px] w-8 bg-golomon-secondary"></span>
+            <div className="flex items-center mb-4">
               <span className="text-golomon-primary font-bold text-xs sm:text-sm tracking-widest uppercase">
                 OUR TECHNOLOGY SOLUTIONS & SERVICES
               </span>
@@ -183,8 +182,7 @@ export default function SolutionsPage() {
 
         <div className="max-w-[1400px] mx-auto px-3 sm:px-6 lg:px-12 relative z-10">
           <div className="max-w-3xl mb-12 lg:mb-16">
-            <div className="flex items-center gap-3 mb-4">
-              <span className="h-[2px] w-8 bg-golomon-secondary"></span>
+            <div className="flex items-center mb-4">
               <span className="text-[#ECF5FB] font-bold text-xs sm:text-sm tracking-[0.2em] uppercase">
                 COMPREHENSIVE PORTFOLIO
               </span>
@@ -257,18 +255,16 @@ export default function SolutionsPage() {
       {/* 3. TAILORED DELIVERY APPROACH */}
       <section className="w-full py-24 bg-white">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-12 text-center">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <span className="h-[2px] w-8 bg-golomon-secondary"></span>
+          <div className="flex items-center justify-center mb-4">
             <span className="text-golomon-secondary font-bold text-xs sm:text-sm tracking-widest uppercase">
               FLEXIBLE, VENDOR-AWARE DELIVERY
             </span>
-            <span className="h-[2px] w-8 bg-golomon-secondary"></span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-6">
             Avoid One-Size-Fits-All <span className="text-golomon-secondary">Technology Decisions.</span>
           </h2>
           <p className="text-base sm:text-lg text-slate-600 mb-16 max-w-3xl mx-auto leading-relaxed">
-            We work collaboratively with clients to understand their business models, existing technology environments, and investment priorities—combining leading vendor platforms and bespoke engineering as required.
+            We work collaboratively with clients to understand their business models, existing technology environments, and investment priorities - combining leading vendor platforms and bespoke engineering as required.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">

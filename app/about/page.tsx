@@ -119,12 +119,10 @@ export default function AboutPage() {
       {/* 1. About Hero Section (Flush with Navbar - pt-20 removed) */}
       <section className="relative w-full py-20 lg:py-28 bg-[#ECF5FB]/50 overflow-hidden border-b border-slate-100">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10 flex flex-col items-center text-center">
-          <div className="flex items-center gap-3 mb-5">
-            <span className="h-[2px] w-8 bg-golomon-secondary"></span>
+          <div className="flex items-center mb-5">
             <span className="text-golomon-secondary font-bold text-xs sm:text-sm tracking-widest uppercase">
               ABOUT GOLOMON LIMITED
             </span>
-            <span className="h-[2px] w-8 bg-golomon-secondary"></span>
           </div>
           
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-golomon-primary leading-tight tracking-tight mb-6 max-w-4xl">
@@ -185,8 +183,7 @@ export default function AboutPage() {
 
             {/* Right Narrative Column */}
             <div className="lg:col-span-7 flex flex-col justify-center">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="h-[2px] w-8 bg-golomon-secondary"></span>
+              <div className="flex items-center mb-4">
                 <span className="text-golomon-secondary font-bold text-xs sm:text-sm tracking-widest uppercase">
                   BUSINESS BACKGROUND
                 </span>
@@ -374,8 +371,7 @@ export default function AboutPage() {
       <section className="w-full py-24 bg-white border-t border-slate-100">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <div className="max-w-2xl mb-16">
-            <div className="flex items-center gap-3 mb-4">
-              <span className="h-[2px] w-8 bg-golomon-secondary"></span>
+            <div className="flex items-center mb-4">
               <span className="text-golomon-secondary font-bold text-xs sm:text-sm tracking-widest uppercase">
                 THE GOLOMON ADVANTAGE
               </span>
@@ -423,7 +419,7 @@ export default function AboutPage() {
             Ready to Modernize Your Technology Environment?
           </h2>
           <p className="text-lg md:text-xl text-blue-100 mb-10 max-w-2xl leading-relaxed">
-            Partner with Golomon Limited for practical, scalable, and integrated technology solutions—or download our official company profile to share with your team.
+            Partner with Golomon Limited for practical, scalable, and integrated technology solutions - or download our official company profile to share with your team.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link
