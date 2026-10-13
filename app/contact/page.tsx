@@ -1,9 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 import { useMutation } from "convex/react";
 import { api } from "@/convex/_generated/api";
-import { Mail, Phone, MapPin, Send, Loader2, CheckCircle } from "lucide-react";
+import { 
+  Mail, Phone, MapPin, Send, Loader2, CheckCircle, 
+  ChevronDown, Code, Server, ShieldCheck, MessageSquare, 
+  Clock, FileCheck, Cloud, Cpu 
+} from "lucide-react";
 
 export default function ContactPage() {
   const submitContactMessage = useMutation(api.contact.submitMessage);
@@ -20,8 +24,20 @@ export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState("");
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  // Array powering the custom dropdown with the 6 official core services
+  const serviceOptions = [
+    { value: "it-consulting", label: "IT Consulting & Tech Services", icon: Server },
+    { value: "licensing", label: "Technology Licensing & Procurement", icon: FileCheck },
+    { value: "cloud", label: "Cloud Computing", icon: Cloud },
+    { value: "cybersecurity", label: "Cybersecurity", icon: ShieldCheck },
+    { value: "software-saas", label: "Software Development & SaaS", icon: Code },
+    { value: "ai-automation", label: "AI & Automation", icon: Cpu },
+    { value: "other", label: "Other Inquiry", icon: MessageSquare },
+  ];
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { id, value } = e.target;
     setFormData((prev) => ({ ...prev, [id]: value }));
   };
@@ -30,6 +46,12 @@ export default function ContactPage() {
     e.preventDefault();
     setIsSubmitting(true);
     setError("");
+
+    if (!formData.service) {
+      setError("Please select a service from the dropdown.");
+      setIsSubmitting(false);
+      return;
+    }
 
     try {
       await submitContactMessage({
@@ -42,14 +64,17 @@ export default function ContactPage() {
       });
       
       setIsSuccess(true);
-      // Optional: Clear form if you want to allow multiple submissions
-      // setFormData({ firstName: "", lastName: "", email: "", company: "", service: "", message: "" });
+      setFormData({ firstName: "", lastName: "", email: "", company: "", service: "", message: "" });
     } catch (err) {
       setError("Something went wrong. Please try again later.");
     } finally {
       setIsSubmitting(false);
     }
   };
+
+  // Helper to find the currently selected option data
+  const selectedOption = serviceOptions.find(opt => opt.value === formData.service);
+  const SelectedIcon = selectedOption?.icon;
 
   return (
     <main className="w-full bg-[#F8FAFC] flex flex-col pt-24 min-h-screen">
@@ -64,7 +89,7 @@ export default function ContactPage() {
             Contact <span className="text-golomon-primary">Golomon</span>
           </h1>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Ready to build a stronger digital foundation? Reach out to our team in Nairobi to discuss your technology needs, request a quote, or schedule a consultation.
+            Ready to build a stronger digital foundation? Reach out to our team to discuss your technology needs, request a quote, or schedule a consultation.
           </p>
         </div>
       </section>
@@ -75,10 +100,10 @@ export default function ContactPage() {
           
           <div className="bg-white rounded-[2.5rem] shadow-xl overflow-hidden flex flex-col lg:flex-row border border-slate-100">
             
-            {/* Left: Contact Information (Brand Theme) */}
-            <div className="w-full lg:w-5/12 bg-golomon-primary p-12 lg:p-16 text-white relative overflow-hidden flex flex-col justify-between">
+            {/* Left: Contact Information & Map (Brand Theme) */}
+            <div className="w-full lg:w-5/12 bg-golomon-primary p-10 lg:p-14 text-white relative overflow-hidden flex flex-col justify-between">
               {/* Background Tech Graphic */}
-              <div className="absolute inset-0 opacity-20 pointer-events-none">
+              <div className="absolute inset-0 opacity-20 pointer-events-none z-0">
                 <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
                   <path d="M -50 100 L 150 100 L 250 200 L 400 200" stroke="#ECF5FB" strokeWidth="2" fill="none" />
                   <path d="M 0 300 L 100 300 L 200 400" stroke="#CD5007" strokeWidth="2" fill="none" />
@@ -86,56 +111,83 @@ export default function ContactPage() {
                 </svg>
               </div>
 
-              <div className="relative z-10">
-                <h3 className="text-3xl font-extrabold mb-12 tracking-tight">
-                  Our Nairobi Office
-                </h3>
+              <div className="relative z-10 flex flex-col h-full">
+                <div>
+                  <h3 className="text-3xl font-extrabold mb-10 tracking-tight">
+                    Our Office
+                  </h3>
 
-                <div className="space-y-10">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0 border border-white/20">
-                      <Mail className="w-5 h-5 text-golomon-secondary" />
+                  <div className="space-y-6">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0 border border-white/20">
+                        <Mail className="w-5 h-5 text-golomon-secondary" />
+                      </div>
+                      <div>
+                        <p className="text-sm text-blue-200 font-medium mb-0.5">General Inquiries</p>
+                        <a href="mailto:info@golomon.com" className="text-lg font-bold hover:text-golomon-secondary transition-colors">
+                          info@golomon.com
+                        </a>
+                      </div>
                     </div>
-                    <div>
-                      <p className="text-sm text-blue-200 font-medium mb-1">General Inquiries</p>
-                      <a href="mailto:info@golomon.com" className="text-lg font-bold hover:text-golomon-secondary transition-colors">
-                        info@golomon.com
-                      </a>
+
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0 border border-white/20">
+                        <Phone className="w-5 h-5 text-golomon-secondary" />
+                      </div>
+                      <div>
+                        <p className="text-sm text-blue-200 font-medium mb-0.5">Direct Line</p>
+                        <a href="tel:+254142426126" className="text-lg font-bold hover:text-golomon-secondary transition-colors">
+                          +254 142 426 126
+                        </a>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0 border border-white/20">
+                        <Clock className="w-5 h-5 text-golomon-secondary" />
+                      </div>
+                      <div>
+                        <p className="text-sm text-blue-200 font-medium mb-0.5">Business Hours</p>
+                        <p className="text-lg font-bold">
+                          Monday - Friday <br />
+                          <span className="text-base font-semibold text-blue-50">09:00 - 17:00 (Hrs)</span>
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0 border border-white/20">
+                        <MapPin className="w-5 h-5 text-golomon-secondary" />
+                      </div>
+                      <div>
+                        <p className="text-sm text-blue-200 font-medium mb-0.5">Location</p>
+                        <p className="text-lg font-bold">
+                          Muthaiga, Nairobi, Kenya
+                        </p>
+                      </div>
                     </div>
                   </div>
+                </div>
 
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0 border border-white/20">
-                      <Phone className="w-5 h-5 text-golomon-secondary" />
-                    </div>
-                    <div>
-                      <p className="text-sm text-blue-200 font-medium mb-1">Direct Line</p>
-                      <a href="tel:+254700000000" className="text-lg font-bold hover:text-golomon-secondary transition-colors">
-                        +254 700 000 000
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0 border border-white/20">
-                      <MapPin className="w-5 h-5 text-golomon-secondary" />
-                    </div>
-                    <div>
-                      <p className="text-sm text-blue-200 font-medium mb-1">Location</p>
-                      <p className="text-lg font-bold">
-                        Nairobi, Kenya
-                      </p>
-                      <p className="text-blue-100 text-sm mt-1">
-                        Serving organizations across East Africa.
-                      </p>
-                    </div>
-                  </div>
+                {/* Embedded Google Map */}
+                <div className="mt-10 rounded-2xl overflow-hidden border border-white/20 h-48 sm:h-56 relative shadow-inner w-full flex-shrink-0">
+                  <iframe 
+                    src="https://maps.google.com/maps?q=Muthaiga,%20Nairobi,%20Kenya&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+                    width="100%" 
+                    height="100%" 
+                    style={{ border: 0 }} 
+                    allowFullScreen 
+                    loading="lazy" 
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="absolute inset-0"
+                    title="Golomon Location Map"
+                  ></iframe>
                 </div>
               </div>
             </div>
 
             {/* Right: Contact Form / Success State */}
-            <div className="w-full lg:w-7/12 p-12 lg:p-16 bg-white flex flex-col justify-center">
+            <div className="w-full lg:w-7/12 p-8 sm:p-12 lg:p-16 bg-white flex flex-col justify-center relative">
               
               {isSuccess ? (
                 <div className="flex flex-col items-center justify-center text-center space-y-6 py-12">
@@ -144,7 +196,7 @@ export default function ContactPage() {
                   </div>
                   <h3 className="text-3xl font-bold text-slate-900">Message Received!</h3>
                   <p className="text-lg text-slate-600 max-w-md">
-                    Thank you for reaching out, {formData.firstName}. Our team will review your inquiry and get back to you within 24 hours.
+                    Thank you for reaching out, {formData.firstName}. Our team will review your inquiry and get back to you shortly.
                   </p>
                   <button 
                     onClick={() => setIsSuccess(false)}
@@ -219,22 +271,52 @@ export default function ContactPage() {
                       </div>
                     </div>
 
-                    <div className="space-y-2">
-                      <label htmlFor="service" className="text-sm font-bold text-slate-700">How can we help? <span className="text-red-500">*</span></label>
-                      <select 
-                        id="service" 
-                        required
-                        value={formData.service}
-                        onChange={handleChange}
-                        className="w-full px-5 py-4 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:border-golomon-primary focus:ring-1 focus:ring-golomon-primary transition-all text-slate-700"
+                    {/* Custom Dropdown */}
+                    <div className="space-y-2 relative">
+                      <label className="text-sm font-bold text-slate-700">How can we help? <span className="text-red-500">*</span></label>
+                      
+                      <button
+                        type="button"
+                        onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                        className="w-full px-5 py-4 rounded-xl border border-slate-200 bg-slate-50 hover:bg-white focus:bg-white focus:outline-none focus:border-golomon-primary focus:ring-1 focus:ring-golomon-primary transition-all text-left flex justify-between items-center text-slate-700"
                       >
-                        <option value="">Select a service...</option>
-                        <option value="custom-software">Custom Software Development</option>
-                        <option value="infrastructure">Computing Infrastructure</option>
-                        <option value="integration">Systems Integration</option>
-                        <option value="support">Lifecycle Support</option>
-                        <option value="other">Other Inquiry</option>
-                      </select>
+                        <span className="flex items-center gap-3">
+                          {selectedOption ? (
+                            <>
+                              {SelectedIcon && <SelectedIcon className="w-5 h-5 text-golomon-primary" />}
+                              <span className="text-slate-900 font-medium">{selectedOption.label}</span>
+                            </>
+                          ) : (
+                            "Select a service..."
+                          )}
+                        </span>
+                        <ChevronDown className={`w-5 h-5 text-slate-400 transition-transform duration-300 ${isDropdownOpen ? "rotate-180" : ""}`} />
+                      </button>
+
+                      {isDropdownOpen && (
+                        <>
+                          <div className="fixed inset-0 z-10" onClick={() => setIsDropdownOpen(false)}></div>
+                          <div className="absolute z-20 w-full mt-2 bg-white border border-slate-100 rounded-xl shadow-xl overflow-hidden py-2 animate-in fade-in slide-in-from-top-2 duration-200 max-h-64 overflow-y-auto">
+                            {serviceOptions.map((option) => (
+                              <button
+                                key={option.value}
+                                type="button"
+                                onClick={() => {
+                                  setFormData(prev => ({ ...prev, service: option.value }));
+                                  setIsDropdownOpen(false);
+                                  setError("");
+                                }}
+                                className="w-full px-5 py-3 text-left flex items-center gap-3 hover:bg-[#ECF5FB] transition-colors group"
+                              >
+                                <option.icon className="w-5 h-5 text-slate-400 group-hover:text-golomon-primary transition-colors" />
+                                <span className="text-slate-700 font-medium group-hover:text-golomon-primary transition-colors">
+                                  {option.label}
+                                </span>
+                              </button>
+                            ))}
+                          </div>
+                        </>
+                      )}
                     </div>
 
                     <div className="space-y-2">

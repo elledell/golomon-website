@@ -28,10 +28,10 @@ export default function FloatingAssistant() {
   ]);
 
   const quickActions = [
-    "Our solutions", 
+    "Our services", 
     "Pricing", 
-    "Custom Software", 
-    "Infrastructure", 
+    "Software & SaaS", 
+    "Cloud & Security", 
     "I need support"
   ];
 
@@ -59,16 +59,16 @@ export default function FloatingAssistant() {
     setTimeout(() => {
       let botReply = "Thanks for reaching out! One of our experts will assist you shortly. For immediate help, please use the WhatsApp or Email buttons below.";
 
-      if (text === "Our solutions") {
-        botReply = "Our core solutions include:\n• Custom Software Development\n• Computing Infrastructure\n• Systems Integration\n• Lifecycle Support\n\nAsk about any of them.";
+      if (text === "Our services") {
+        botReply = "Our 6 core pillars are:\n• IT Consulting\n• Licensing & Procurement\n• Cloud Computing\n• Cybersecurity\n• Software & SaaS\n• AI & Automation\n\nWhich one can we help you with?";
       } else if (text === "Pricing") {
-        botReply = "Our pricing is tailored to your specific infrastructure and software needs. Would you like to schedule a free consultation?";
-      } else if (text === "Custom Software") {
-        botReply = "We build custom web apps, ERPs, and mobile applications shaped around your exact workflows. What are you looking to build?";
-      } else if (text === "Infrastructure") {
-        botReply = "We modernize legacy environments, deploy hybrid cloud solutions, and manage corporate networks. How can we improve your infrastructure?";
+        botReply = "Our pricing is tailored to your specific enterprise requirements. Would you like to schedule a free business discovery consultation?";
+      } else if (text === "Software & SaaS") {
+        botReply = "We build bespoke software applications, enterprise solutions, and SaaS platforms shaped around your workflows. What are you looking to build?";
+      } else if (text === "Cloud & Security") {
+        botReply = "We provide secure, scalable cloud infrastructure and enterprise cybersecurity solutions to protect your data and networks. How can we improve your environment?";
       } else if (text === "I need support") {
-        botReply = "Sorry you are having issues! Please email support@golomon.com or WhatsApp us at +254 700 000 000 for immediate technical assistance.";
+        botReply = "Sorry you are having issues! Please email info@golomon.com or WhatsApp us at +254 142 426 126 for immediate assistance.";
       }
 
       setMessages(prev => [...prev, { id: Date.now() + 1, sender: "bot", text: botReply }]);
@@ -153,7 +153,7 @@ export default function FloatingAssistant() {
                 <Mail className="w-4 h-4" /> Email support
               </a>
               <a 
-                href="https://wa.me/254700000000" 
+                href="https://wa.me/254142426126" 
                 target="_blank"
                 rel="noreferrer"
                 className="flex-1 flex items-center justify-center gap-2 py-2 bg-[#E8F8F0] hover:bg-[#d1f1df] text-[#128C7E] rounded-xl text-sm font-bold transition-colors"

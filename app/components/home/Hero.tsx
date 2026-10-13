@@ -12,23 +12,46 @@ export default function Hero() {
     {
       id: 1,
       image: "/hero1.png",
-      tagline: "PROGRESS, POWERED BY TECHNOLOGY.",
-      title: "Transforming Technology Into Measurable Value",
-      description: "We design and deliver cohesive solutions that simplify complex IT environments and connect the systems your business needs to grow.",
+      tagline: "POWERING PROGRESS.",
+      title: "Integrated Technology Solutions That Empower Growth",
+      description: (
+        <>
+          As a leading Technology Solutions Provider (TSP), <span className="text-golomon-secondary font-bold">Golomon</span> delivers integrated IT products, services, and solutions that empower organizations to build, modernize, manage, and optimize their technology environments.
+        </>
+      ),
     },
     {
       id: 2,
       image: "/hero2.png",
-      tagline: "PRACTICAL, SCALABLE, INTEGRATED.",
-      title: "Build a Stronger Digital Foundation",
-      description: "We modernize legacy environments and deploy scalable solutions that enhance operational efficiency, productivity, and resilience.",
+      tagline: "PRACTICAL, INTEGRATED, SCALABLE.",
+      title: "Simplifying Complex IT Environments",
+      description: (
+        <>
+          <span className="text-golomon-secondary font-bold">Golomon</span> designs and delivers business-focused solutions that strengthen operational capabilities, connect disconnected systems, and build scalable, secure, and future-ready digital environments.
+        </>
+      ),
     },
     {
       id: 3,
       image: "/hero3.png",
       tagline: "YOUR TRUSTED TECHNOLOGY PARTNER.",
-      title: "Empowering Sustainable Business Growth",
-      description: "By combining technology expertise and strategic partnerships, we help organizations leverage technology as a strategic driver of success.",
+      title: "Business-Outcome-Driven Technology Transformation",
+      description: (
+        <>
+          <span className="text-golomon-secondary font-bold">Golomon</span> combines strategic advisory, technical expertise, and a robust ecosystem of leading vendors and specialist partners to help your organization achieve measurable business value and sustainable growth.
+        </>
+      ),
+    },
+    {
+      id: 4,
+      image: "/hero4.png", // REMEMBER: Change this if you rename the file to clear the cache!
+      tagline: "SECURE & RESILIENT INFRASTRUCTURE.",
+      title: "Building the Foundation for Your Digital Future",
+      description: (
+        <>
+          From cloud computing to enterprise cybersecurity, <span className="text-golomon-secondary font-bold">Golomon</span> provides robust, end-to-end technology infrastructure designed to protect your data and ensure seamless, scalable operations.
+        </>
+      ),
     },
   ];
 
@@ -51,7 +74,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative w-full h-[calc(100vh-80px)] min-h-[500px] max-h-[640px] flex items-center overflow-hidden">
+    <section className="relative w-full h-[calc(100vh-80px)] min-h-[580px] max-h-[700px] flex items-center overflow-hidden pb-8 md:pb-0">
       {/* Background Images */}
       {slides.map((slide, index) => (
         <div
@@ -62,7 +85,7 @@ export default function Hero() {
         >
           <Image
             src={slide.image}
-            alt={slide.title}
+            alt={typeof slide.title === 'string' ? slide.title : `Hero Slide ${index + 1}`}
             fill
             className="object-cover object-right md:object-center"
             priority={index === 0}
@@ -71,19 +94,21 @@ export default function Hero() {
       ))}
 
       {/* Smooth Gradient Overlay */}
-      <div className="absolute inset-0 z-10 bg-gradient-to-r from-white via-white/85 to-white/10 md:to-transparent"></div>
+      <div className="absolute inset-0 z-10 bg-gradient-to-r from-white via-white/90 to-white/15 md:to-transparent"></div>
 
-      {/* Content - Adjusted text sizes and max-widths for mobile readability */}
+      {/* Content */}
       <div className="max-w-[1400px] mx-auto px-6 sm:px-12 md:px-20 lg:px-28 w-full relative z-20">
         <div className="max-w-2xl">
-          <div className="flex items-center gap-3 mb-4">
-            <span className="h-[2px] w-8 bg-golomon-secondary"></span>
+          <div className="flex items-center mb-4">
             <span className="text-golomon-secondary font-bold text-xs sm:text-sm tracking-widest uppercase">
               {slides[currentSlide].tagline}
             </span>
           </div>
           
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#001433] leading-[1.15] mb-5 tracking-tight transition-opacity duration-500 pr-2 md:pr-4">
+          <h1 
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-[64px] font-black text-[#001433] leading-[1.05] mb-6 tracking-tight transition-opacity duration-500 pr-2 md:pr-4"
+            style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}
+          >
             {slides[currentSlide].title}
           </h1>
           
@@ -94,13 +119,13 @@ export default function Hero() {
           <div className="flex flex-wrap items-center gap-4">
             <Link
               href="#solutions"
-              className="bg-golomon-secondary text-white px-8 py-4 rounded-md font-semibold hover:bg-orange-700 transition-colors shadow-md shadow-orange-500/20"
+              className="bg-golomon-secondary text-white px-7 py-3.5 md:px-8 md:py-4 rounded-md font-semibold hover:bg-orange-700 transition-colors shadow-md shadow-orange-500/20 text-sm md:text-base"
             >
-              Discover Solutions
+              Explore Our Solutions
             </Link>
             <Link
-              href="#contact"
-              className="bg-slate-900 text-white px-8 py-4 rounded-md font-semibold hover:bg-golomon-primary transition-colors shadow-md"
+              href="/contact"
+              className="bg-slate-900 text-white px-7 py-3.5 md:px-8 md:py-4 rounded-md font-semibold hover:bg-golomon-primary transition-colors shadow-md text-sm md:text-base"
             >
               Contact Us
             </Link>
@@ -108,9 +133,23 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Slider Controls with Image Previews - Hidden on mobile via "hidden md:flex" */}
-      
-      {/* Previous Button */}
+      {/* Slide Indicators (Dots) */}
+      <div className="absolute bottom-5 left-6 sm:left-12 md:left-20 lg:left-28 z-30 flex items-center gap-2.5">
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentSlide(index)}
+            aria-label={`Go to slide ${index + 1}`}
+            className={`h-2 rounded-full transition-all duration-300 ${
+              index === currentSlide
+                ? "w-8 bg-golomon-secondary"
+                : "w-2 bg-slate-400/60 hover:bg-slate-600"
+            }`}
+          />
+        ))}
+      </div>
+
+      {/* Slider Controls with Image Previews - Hidden on mobile */}
       <button
         onClick={prevSlide}
         className="hidden md:flex group absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 z-30 w-14 h-14 rounded-full items-center justify-center bg-white/80 shadow-md transition-all border border-gray-200 overflow-hidden"
@@ -131,7 +170,6 @@ export default function Hero() {
         />
       </button>
 
-      {/* Next Button */}
       <button
         onClick={nextSlide}
         className="hidden md:flex group absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 z-30 w-14 h-14 rounded-full items-center justify-center bg-white/80 shadow-md transition-all border border-gray-200 overflow-hidden"

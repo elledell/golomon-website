@@ -1,217 +1,447 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { 
   Target, 
   Eye, 
-  Users, 
-  Wrench, 
-  TrendingUp, 
+  ShieldCheck, 
   Lightbulb, 
   Handshake, 
   ArrowRight,
-  Zap,
-  Network,
-  Rocket
+  Download,
+  CheckCircle2,
+  FileText,
+  Layers,
+  MessageSquare,
+  Scaling,
+  Users
 } from "lucide-react";
 
 export default function AboutPage() {
+  const commitments = [
+    {
+      title: "Understanding Our Clients",
+      description:
+        "We listen, understand the business, and design technology around real needs, objectives, and growth ambitions.",
+    },
+    {
+      title: "Delivering Practical Solutions",
+      description:
+        "We provide integrated, fit-for-purpose, and scalable technology that solves real business challenges.",
+    },
+    {
+      title: "Creating Measurable Value",
+      description:
+        "We focus on outcomes that improve efficiency, productivity, visibility, reliability, and overall business performance.",
+    },
+    {
+      title: "Pursuing Excellence and Innovation",
+      description:
+        "We combine technical expertise, disciplined delivery, and continuous innovation to ensure our solutions remain relevant and effective.",
+    },
+    {
+      title: "Building Trusted Partnerships",
+      description:
+        "We operate with integrity, accountability, and responsiveness, building lasting relationships with our clients and technology partners.",
+    },
+  ];
+
+  const coreValues = [
+    {
+      title: "Professional Integrity",
+      description:
+        "We uphold the highest standards of ethical conduct, transparency, and accountability in everything we do.",
+      Icon: ShieldCheck,
+      bg: "bg-[#ECF5FB]",
+      iconColor: "text-golomon-primary",
+    },
+    {
+      title: "Industry Collaboration",
+      description:
+        "We build strategic partnerships and leverage collective expertise to deliver integrated solutions and shared success.",
+      Icon: Handshake,
+      bg: "bg-orange-50",
+      iconColor: "text-golomon-secondary",
+    },
+    {
+      title: "Technology Innovation",
+      description:
+        "We harness emerging technologies and forward-thinking solutions to drive transformation and sustainable competitive advantage.",
+      Icon: Lightbulb,
+      bg: "bg-[#ECF5FB]",
+      iconColor: "text-golomon-primary",
+    },
+    {
+      title: "Client Centricity",
+      description:
+        "We align our solutions with our clients' business objectives to deliver measurable value and lasting impact.",
+      Icon: Target,
+      bg: "bg-orange-50",
+      iconColor: "text-golomon-secondary",
+    },
+  ];
+
+  const whyChooseUs = [
+    {
+      number: "01",
+      title: "Professional and Structured Delivery",
+      description:
+        "We apply disciplined processes, clear project governance, and structured workflows to ensure every engagement is delivered efficiently, transparently, and to a high professional standard.",
+      Icon: Layers,
+    },
+    {
+      number: "02",
+      title: "Clear and Responsive Communication",
+      description:
+        "We maintain open, timely, and purposeful communication throughout every engagement, ensuring expectations are clearly understood, progress is visible, and stakeholders remain aligned from planning through implementation and support.",
+      Icon: MessageSquare,
+    },
+    {
+      number: "03",
+      title: "Practical, Scalable Solutions",
+      description:
+        "We deliver fit-for-purpose technology solutions designed around real business requirements. Our approach balances functionality, scalability, efficiency, and cost to ensure technology investments deliver sustainable business value.",
+      Icon: Scaling,
+    },
+    {
+      number: "04",
+      title: "Client-Centred Partnerships",
+      description:
+        "We take the time to understand each client's objectives, operational environment, and growth priorities. By working collaboratively and building trusted relationships, we provide solutions and ongoing support that evolve with our clients' needs.",
+      Icon: Users,
+    },
+  ];
+
   return (
-    <main className="w-full bg-white flex flex-col pt-20">
+    <main className="w-full bg-white flex flex-col">
       
-      {/* About Hero Section */}
-      <section className="relative w-full py-20 lg:py-28 bg-[#ECF5FB]/40 overflow-hidden">
+      {/* 1. About Hero Section (Flush with Navbar - pt-20 removed) */}
+      <section className="relative w-full py-20 lg:py-28 bg-[#ECF5FB]/50 overflow-hidden border-b border-slate-100">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10 flex flex-col items-center text-center">
-          <div className="flex items-center gap-3 mb-6">
+          <div className="flex items-center gap-3 mb-5">
             <span className="h-[2px] w-8 bg-golomon-secondary"></span>
-            <span className="text-golomon-secondary font-bold text-sm tracking-widest uppercase">
-              About Golomon
+            <span className="text-golomon-secondary font-bold text-xs sm:text-sm tracking-widest uppercase">
+              ABOUT GOLOMON LIMITED
             </span>
             <span className="h-[2px] w-8 bg-golomon-secondary"></span>
           </div>
+          
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-golomon-primary leading-tight tracking-tight mb-6 max-w-4xl">
-            Progress, Powered By Technology.
+            Powering Progress Through Integrated Technology.
           </h1>
-          <p className="text-lg md:text-xl text-slate-600 max-w-2xl leading-relaxed">
-            We simplify complex IT environments and connect the systems, infrastructure, and capabilities businesses need to operate and grow.
+          
+          <p className="text-lg md:text-xl text-slate-600 max-w-3xl leading-relaxed mb-10">
+            Golomon Limited is a Technology Solutions Provider (TSP) delivering integrated IT products, services, and solutions that empower organizations to build, modernize, manage, and optimize their technology environments.
           </p>
+
+          {/* Hero Actions including Downloadable Company Profile */}
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <a
+              href="/Golomon-Company-Profile.pdf"
+              download="Golomon-Company-Profile.pdf"
+              className="inline-flex items-center gap-2.5 bg-golomon-secondary text-white px-7 py-4 rounded-md font-bold text-sm sm:text-base hover:bg-orange-700 transition-colors shadow-md shadow-orange-500/20"
+            >
+              <Download className="w-5 h-5" />
+              Download Golomon's Profile (PDF)
+            </a>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 bg-slate-900 text-white px-7 py-4 rounded-md font-bold text-sm sm:text-base hover:bg-golomon-primary transition-colors shadow-md"
+            >
+              Partner With Us
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* Mission & Vision Split - Redesigned to match layout while using Golomon colors */}
+      {/* 2. Company Overview & Business Background */}
+      <section className="w-full py-24 bg-white">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            
+            {/* Left Image Column */}
+            <div className="lg:col-span-5 relative w-full h-[450px] lg:h-[580px] rounded-3xl overflow-hidden shadow-xl">
+              <Image
+                src="/about.png"
+                alt="Golomon Limited Business Overview"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-golomon-primary/10 mix-blend-multiply"></div>
+              <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-sm p-6 rounded-2xl shadow-lg border-b-4 border-golomon-secondary">
+                <span className="block text-xs font-bold uppercase tracking-widest text-golomon-secondary mb-1">
+                  Business Type
+                </span>
+                <span className="block text-xl font-extrabold text-slate-900">
+                  Technology Solutions Provider (TSP)
+                </span>
+                <span className="text-xs font-medium text-slate-500 mt-1 block">
+                  Sector: Information Technology (IT)
+                </span>
+              </div>
+            </div>
+
+            {/* Right Narrative Column */}
+            <div className="lg:col-span-7 flex flex-col justify-center">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="h-[2px] w-8 bg-golomon-secondary"></span>
+                <span className="text-golomon-secondary font-bold text-xs sm:text-sm tracking-widest uppercase">
+                  BUSINESS BACKGROUND
+                </span>
+              </div>
+
+              <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight mb-6 tracking-tight">
+                A Business-Outcome-Driven Approach to Technology.
+              </h2>
+
+              <div className="space-y-4 text-slate-600 text-base md:text-lg leading-relaxed">
+                <p>
+                  Golomon was established in response to the growing demand for integrated, practical, and commercially viable technology solutions that align with business objectives and support sustainable growth. As organizations increasingly depend on technology to drive efficiency, competitiveness, and innovation, many continue to navigate fragmented IT environments characterized by legacy applications, manual processes, disconnected systems, standalone infrastructure, and disparate technology service providers.
+                </p>
+                <p>
+                  We address these challenges by combining strategic advisory, technical expertise, and integrated solutions to help organizations align their technology investments with operational priorities and long-term business goals. Rather than operating solely as a supplier of IT products, we work collaboratively with clients to understand their business models, strategic objectives, operational challenges, existing technology environments, and growth ambitions.
+                </p>
+                <p>
+                  To deliver these capabilities, we leverage a broad ecosystem of technology platforms, hardware manufacturers, software vendors, distributors, cloud service providers, and specialist implementation partners. By adopting a flexible, vendor-aware, and solutions-oriented approach, Golomon helps organizations avoid one-size-fits-all technology decisions and pursue solutions that deliver measurable business value.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Mission & Vision Split + 5 Commitments */}
       <section className="w-full py-24 bg-slate-50">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           
-          {/* Mission Card (Light) */}
-          <div className="bg-white p-10 lg:p-14 rounded-[2.5rem] shadow-xl relative overflow-hidden border border-slate-100 flex flex-col justify-between">
-            {/* Top Right Decorative Background */}
-            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#ECF5FB] rounded-full -translate-y-1/2 translate-x-1/3 opacity-80 z-0"></div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-16">
             
-            <div className="relative z-10">
-              <div className="flex items-center gap-4 mb-8">
-                <div className="w-14 h-14 bg-golomon-primary rounded-full flex items-center justify-center shadow-md">
-                  <Target className="text-white w-7 h-7" />
+            {/* Mission Card (Light) */}
+            <div className="bg-white p-10 lg:p-14 rounded-[2.5rem] shadow-xl relative overflow-hidden border border-slate-100 flex flex-col justify-between">
+              <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#ECF5FB] rounded-full -translate-y-1/2 translate-x-1/3 opacity-80 z-0"></div>
+              
+              <div className="relative z-10">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-14 h-14 bg-golomon-primary rounded-full flex items-center justify-center shadow-md">
+                    <Target className="text-white w-7 h-7" />
+                  </div>
+                  <div>
+                    <span className="text-golomon-primary font-bold text-[13px] tracking-[0.2em] uppercase">
+                      Why We Exist
+                    </span>
+                    <h2 className="text-4xl font-extrabold text-slate-900 mt-1 tracking-tight">
+                      Our <span className="text-golomon-secondary">Mission</span>
+                    </h2>
+                  </div>
                 </div>
-                <div>
-                  <span className="text-golomon-primary font-bold text-[13px] tracking-[0.2em] uppercase">
-                    Why We Exist
-                  </span>
-                  <h2 className="text-4xl font-extrabold text-slate-900 mt-1 tracking-tight">
-                    Our <span className="text-golomon-secondary">Mission</span>
-                  </h2>
-                </div>
+
+                <p className="text-2xl lg:text-[1.65rem] font-bold text-slate-900 mb-6 leading-[1.35]">
+                  To help businesses harness technology to simplify operations, improve performance, and achieve sustainable growth through practical, integrated, and scalable solutions.
+                </p>
+                <p className="text-base md:text-lg text-slate-600 leading-relaxed mb-10">
+                  We provide integrated, fit-for-purpose, and scalable technology that solves real business challenges and creates measurable operational value.
+                </p>
               </div>
 
-              <p className="text-2xl lg:text-[1.75rem] font-bold text-slate-900 mb-6 leading-[1.3]">
-                To help businesses harness technology to simplify operations, improve performance, and achieve sustainable growth through practical, integrated, and scalable solutions.
-              </p>
-              <p className="text-lg text-slate-600 leading-relaxed mb-10">
-                We provide fit-for-purpose technology that solves real business challenges, creating measurable value that improves efficiency, visibility, and overall performance.
-              </p>
+              <div className="flex flex-wrap gap-3 relative z-10 mt-auto">
+                {["Practical", "Integrated", "Scalable"].map((tag) => (
+                  <span key={tag} className="px-5 py-2.5 bg-[#ECF5FB] text-golomon-primary rounded-full text-sm font-bold border border-blue-100">
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
 
-            {/* Pill Tags */}
-            <div className="flex flex-wrap gap-3 relative z-10 mt-auto">
-              {["Simplify", "Performance", "Scalability"].map((tag) => (
-                <span key={tag} className="px-5 py-2.5 bg-[#ECF5FB] text-golomon-primary rounded-full text-sm font-bold border border-blue-100">
-                  {tag}
-                </span>
+            {/* Vision Card (Dark) */}
+            <div className="bg-[#00225A] p-10 lg:p-14 rounded-[2.5rem] shadow-xl relative overflow-hidden flex flex-col justify-between">
+              <div className="absolute inset-0 opacity-20 pointer-events-none z-0">
+                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M 100 0 L 100 150 L 300 250 L 500 250" stroke="#ECF5FB" strokeWidth="2" fill="none" />
+                  <path d="M 400 0 L 400 100 L 200 200" stroke="#CD5007" strokeWidth="2" fill="none" />
+                  <circle cx="500" cy="250" r="4" fill="#ECF5FB" />
+                  <circle cx="200" cy="200" r="4" fill="#CD5007" />
+                </svg>
+              </div>
+              
+              <div className="relative z-10">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-14 h-14 bg-golomon-secondary rounded-full flex items-center justify-center shadow-md">
+                    <Eye className="text-white w-7 h-7" />
+                  </div>
+                  <div>
+                    <span className="text-golomon-secondary font-bold text-[13px] tracking-[0.2em] uppercase">
+                      Where We&apos;re Going
+                    </span>
+                    <h2 className="text-4xl font-extrabold text-white mt-1 tracking-tight">
+                      Our <span className="text-[#ECF5FB]">Vision</span>
+                    </h2>
+                  </div>
+                </div>
+
+                <p className="text-2xl lg:text-[1.65rem] font-bold text-white mb-6 leading-[1.35]">
+                  To be a trusted leading technology solutions partner, enabling businesses to achieve sustainable growth through technology.
+                </p>
+                <p className="text-base md:text-lg text-slate-300 leading-relaxed mb-10">
+                  We operate with integrity, accountability, and responsiveness, building lasting relationships with our clients and technology partners.
+                </p>
+              </div>
+
+              <div className="flex flex-wrap gap-3 relative z-10 mt-auto">
+                {["Trusted Partner", "Innovation", "Sustainable Growth"].map((tag) => (
+                  <span key={tag} className="px-5 py-2.5 bg-white/10 text-white rounded-full text-sm font-bold border border-white/20">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+            
+          </div>
+
+          {/* 5 Strategic Commitments */}
+          <div className="bg-white rounded-3xl p-8 lg:p-12 border border-slate-200/80 shadow-sm">
+            <div className="max-w-2xl mb-8">
+              <span className="text-golomon-secondary font-bold text-xs tracking-widest uppercase block mb-2">
+                OUR COMMITMENTS
+              </span>
+              <h3 className="text-2xl md:text-3xl font-extrabold text-slate-900">
+                How We Deliver on Our Mission & Vision
+              </h3>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {commitments.map((item, index) => (
+                <div key={index} className="flex items-start gap-3.5 p-4 rounded-2xl bg-slate-50 border border-slate-100">
+                  <CheckCircle2 className="w-5 h-5 text-golomon-secondary flex-shrink-0 mt-1" />
+                  <div>
+                    <h4 className="font-bold text-slate-900 text-base mb-1">
+                      {item.title}
+                    </h4>
+                    <p className="text-slate-600 text-sm leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
               ))}
             </div>
           </div>
 
-          {/* Vision Card (Dark) */}
-          <div className="bg-[#00225A] p-10 lg:p-14 rounded-[2.5rem] shadow-xl relative overflow-hidden flex flex-col justify-between">
-            {/* Abstract Tech Lines Background */}
-            <div className="absolute inset-0 opacity-20 pointer-events-none z-0">
-              <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                <path d="M 100 0 L 100 150 L 300 250 L 500 250" stroke="#ECF5FB" strokeWidth="2" fill="none" />
-                <path d="M 400 0 L 400 100 L 200 200" stroke="#CD5007" strokeWidth="2" fill="none" />
-                <circle cx="500" cy="250" r="4" fill="#ECF5FB" />
-                <circle cx="200" cy="200" r="4" fill="#CD5007" />
-              </svg>
-            </div>
-            
-            <div className="relative z-10">
-              <div className="flex items-center gap-4 mb-8">
-                <div className="w-14 h-14 bg-golomon-secondary rounded-full flex items-center justify-center shadow-md">
-                  <Eye className="text-white w-7 h-7" />
-                </div>
-                <div>
-                  <span className="text-golomon-secondary font-bold text-[13px] tracking-[0.2em] uppercase">
-                    Where We're Going
-                  </span>
-                  <h2 className="text-4xl font-extrabold text-white mt-1 tracking-tight">
-                    Our <span className="text-[#ECF5FB]">Vision</span>
-                  </h2>
-                </div>
-              </div>
-
-              <p className="text-2xl lg:text-[1.75rem] font-bold text-white mb-6 leading-[1.3]">
-                To be a trusted leading technology solutions partner, enabling businesses to achieve sustainable growth through technology.
-              </p>
-              <p className="text-lg text-slate-300 leading-relaxed mb-10">
-                We operate with integrity and responsiveness, combining technical expertise with continuous innovation to build lasting relationships with our clients and partners.
-              </p>
-            </div>
-
-            {/* Pill Tags */}
-            <div className="flex flex-wrap gap-3 relative z-10 mt-auto">
-              {["Trusted Partner", "Innovation", "Growth"].map((tag) => (
-                <span key={tag} className="px-5 py-2.5 bg-white/10 text-white rounded-full text-sm font-bold border border-white/20 hover:bg-white/20 transition-colors cursor-default">
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-          
         </div>
       </section>
 
-      {/* Culture Section - Inline Floating Card Design */}
+      {/* 4. Core Values Section - Inline Floating Card Design */}
       <section className="w-full py-24 relative overflow-hidden bg-gradient-to-br from-[#ECF5FB]/60 to-white">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 flex flex-col xl:flex-row gap-12 items-center">
           
           {/* Left: Text Content */}
           <div className="w-full xl:w-1/3 flex flex-col justify-center">
             <span className="text-golomon-primary font-bold text-[13px] tracking-[0.2em] uppercase mb-3">
-              How We Work Together
+              THE PRINCIPLES THAT GUIDE US
             </span>
-            <h2 className="text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
-              Our <span className="text-golomon-secondary">Culture</span>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
+              Our Core <span className="text-golomon-secondary">Values</span>
             </h2>
             <div className="h-1 w-16 bg-golomon-primary rounded-full mb-6"></div>
             <p className="text-lg text-slate-600 leading-relaxed pr-4">
-              Our team thrives on continuous learning, technical excellence, and disciplined delivery. We combine our expertise to build solutions that remain relevant, practical, and highly effective. We value:
+              Every solution we architect and every partnership we build is anchored in four core principles that define how we operate and deliver value.
             </p>
           </div>
 
           {/* Right: Floating Columns Card */}
           <div className="w-full xl:w-2/3 bg-white rounded-3xl shadow-2xl p-6 lg:p-10 border border-slate-100">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 divide-y sm:divide-y-0 sm:divide-x divide-slate-100">
-              
-              <div className="flex flex-col pt-4 sm:pt-0 sm:px-4 lg:px-6">
-                <div className="w-12 h-12 bg-[#ECF5FB] rounded-2xl flex items-center justify-center mb-6">
-                  <Lightbulb className="text-golomon-primary w-6 h-6" />
+              {coreValues.map((val, idx) => (
+                <div key={idx} className={`flex flex-col ${idx > 0 ? "pt-6 sm:pt-0" : "pt-2 sm:pt-0"} sm:px-4 lg:px-6`}>
+                  <div className={`w-12 h-12 ${val.bg} rounded-2xl flex items-center justify-center mb-6`}>
+                    <val.Icon className={`${val.iconColor} w-6 h-6`} />
+                  </div>
+                  <h4 className="text-lg font-bold text-slate-900 mb-3">
+                    {val.title}
+                  </h4>
+                  <p className="text-sm text-slate-600 leading-relaxed">
+                    {val.description}
+                  </p>
                 </div>
-                <h4 className="text-xl font-bold text-slate-900 mb-3">Innovation</h4>
-                <p className="text-[15px] text-slate-600 leading-relaxed">
-                  Always exploring better ways to build, solve, and modernize legacy environments.
-                </p>
-              </div>
-
-              <div className="flex flex-col pt-6 sm:pt-0 sm:px-4 lg:px-6">
-                <div className="w-12 h-12 bg-orange-50 rounded-2xl flex items-center justify-center mb-6">
-                  <Users className="text-golomon-secondary w-6 h-6" />
-                </div>
-                <h4 className="text-xl font-bold text-slate-900 mb-3">Collaboration</h4>
-                <p className="text-[15px] text-slate-600 leading-relaxed">
-                  Building stronger ideas through trusted teamwork and client partnerships.
-                </p>
-              </div>
-
-              <div className="flex flex-col pt-6 sm:pt-0 sm:px-4 lg:px-6">
-                <div className="w-12 h-12 bg-[#ECF5FB] rounded-2xl flex items-center justify-center mb-6">
-                  <Target className="text-golomon-primary w-6 h-6" />
-                </div>
-                <h4 className="text-xl font-bold text-slate-900 mb-3">Impact</h4>
-                <p className="text-[15px] text-slate-600 leading-relaxed">
-                  Focusing on outcomes that create real, measurable value for organizations.
-                </p>
-              </div>
-
-              <div className="flex flex-col pt-6 sm:pt-0 sm:px-4 lg:px-6">
-                <div className="w-12 h-12 bg-orange-50 rounded-2xl flex items-center justify-center mb-6">
-                  <Rocket className="text-golomon-secondary w-6 h-6" />
-                </div>
-                <h4 className="text-xl font-bold text-slate-900 mb-3">Growth</h4>
-                <p className="text-[15px] text-slate-600 leading-relaxed">
-                  Empowering businesses with scalable solutions for sustainable expansion.
-                </p>
-              </div>
-
+              ))}
             </div>
           </div>
 
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="w-full py-24 bg-golomon-primary">
-        <div className="max-w-[1000px] mx-auto px-6 lg:px-12 text-center text-white flex flex-col items-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8">
-            Ready to Build a Stronger Digital Foundation?
+      {/* 5. Why Choose Golomon Section */}
+      <section className="w-full py-24 bg-white border-t border-slate-100">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+          <div className="max-w-2xl mb-16">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="h-[2px] w-8 bg-golomon-secondary"></span>
+              <span className="text-golomon-secondary font-bold text-xs sm:text-sm tracking-widest uppercase">
+                THE GOLOMON ADVANTAGE
+              </span>
+            </div>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 leading-tight tracking-tight">
+              Why Choose Golomon.
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {whyChooseUs.map((item) => (
+              <div
+                key={item.number}
+                className="bg-slate-50 p-8 lg:p-10 rounded-3xl border border-slate-200/70 hover:border-golomon-primary/40 hover:shadow-lg transition-all flex flex-col justify-between group"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="w-12 h-12 rounded-2xl bg-white shadow-sm border border-slate-100 flex items-center justify-center text-golomon-primary group-hover:bg-golomon-primary group-hover:text-white transition-colors">
+                      <item.Icon className="w-6 h-6" />
+                    </div>
+                    <span className="text-3xl font-extrabold text-slate-200 group-hover:text-golomon-secondary/40 transition-colors">
+                      {item.number}
+                    </span>
+                  </div>
+                  <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-3">
+                    {item.title}
+                  </h3>
+                  <p className="text-slate-600 leading-relaxed text-[15px] md:text-base">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 6. CTA + Download Company Profile Section */}
+      <section className="w-full py-24 bg-golomon-primary relative overflow-hidden">
+        <div className="max-w-[1000px] mx-auto px-6 lg:px-12 text-center text-white flex flex-col items-center relative z-10">
+          <div className="w-16 h-16 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center mb-6 text-golomon-secondary">
+            <FileText className="w-8 h-8 text-white" />
+          </div>
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">
+            Ready to Modernize Your Technology Environment?
           </h2>
-          <p className="text-xl text-blue-100 mb-10 max-w-2xl">
-            Partner with Golomon to deploy scalable solutions that enhance operational efficiency and return on investment.
+          <p className="text-lg md:text-xl text-blue-100 mb-10 max-w-2xl leading-relaxed">
+            Partner with Golomon Limited for practical, scalable, and integrated technology solutions—or download our official company profile to share with your team.
           </p>
-          <Link
-            href="/#contact"
-            className="inline-flex items-center gap-2 bg-golomon-secondary text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-orange-700 transition-colors shadow-lg"
-          >
-            Get in Touch
-            <ArrowRight className="w-5 h-5" />
-          </Link>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 bg-golomon-secondary text-white px-8 py-4 rounded-md font-bold text-base md:text-lg hover:bg-orange-700 transition-colors shadow-lg"
+            >
+              Consult an Expert
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+            <a
+              href="/Golomon-Company-Profile.pdf"
+              download="Golomon-Company-Profile.pdf"
+              className="inline-flex items-center gap-2.5 bg-white text-golomon-primary px-8 py-4 rounded-md font-bold text-base md:text-lg hover:bg-blue-50 transition-colors shadow-lg"
+            >
+              <Download className="w-5 h-5" />
+              Golomon's Profile
+            </a>
+          </div>
         </div>
       </section>
       

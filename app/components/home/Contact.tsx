@@ -5,7 +5,8 @@ import { useMutation } from "convex/react";
 import { api } from "@/convex/_generated/api";
 import { 
   Mail, Phone, MapPin, Send, Loader2, CheckCircle, 
-  ChevronDown, Code, Server, Puzzle, ShieldCheck, MessageSquare 
+  ChevronDown, Code, Server, ShieldCheck, MessageSquare, 
+  Clock, FileCheck, Cloud, Cpu 
 } from "lucide-react";
 
 export default function Contact() {
@@ -25,12 +26,14 @@ export default function Contact() {
   const [error, setError] = useState("");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  // Array to power the custom dropdown
+  // Array powering the custom dropdown with the 6 official core services
   const serviceOptions = [
-    { value: "custom-software", label: "Custom Software Development", icon: Code },
-    { value: "infrastructure", label: "Computing Infrastructure", icon: Server },
-    { value: "integration", label: "Systems Integration", icon: Puzzle },
-    { value: "support", label: "Lifecycle Support", icon: ShieldCheck },
+    { value: "it-consulting", label: "IT Consulting & Tech Services", icon: Server },
+    { value: "licensing", label: "Technology Licensing & Procurement", icon: FileCheck },
+    { value: "cloud", label: "Cloud Computing", icon: Cloud },
+    { value: "cybersecurity", label: "Cybersecurity", icon: ShieldCheck },
+    { value: "software-saas", label: "Software Development & SaaS", icon: Code },
+    { value: "ai-automation", label: "AI & Automation", icon: Cpu },
     { value: "other", label: "Other Inquiry", icon: MessageSquare },
   ];
 
@@ -80,9 +83,9 @@ export default function Contact() {
         
         <div className="bg-white rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col lg:flex-row border border-slate-100">
           
-          {/* Left: Contact Information */}
-          <div className="w-full lg:w-5/12 bg-golomon-primary p-12 lg:p-16 text-white relative overflow-hidden flex flex-col justify-between">
-            <div className="absolute inset-0 opacity-20 pointer-events-none">
+          {/* Left: Contact Information & Map */}
+          <div className="w-full lg:w-5/12 bg-golomon-primary p-10 lg:p-14 text-white relative overflow-hidden flex flex-col justify-between">
+            <div className="absolute inset-0 opacity-20 pointer-events-none z-0">
               <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
                 <path d="M -50 100 L 150 100 L 250 200 L 400 200" stroke="#ECF5FB" strokeWidth="2" fill="none" />
                 <path d="M 0 300 L 100 300 L 200 400" stroke="#CD5007" strokeWidth="2" fill="none" />
@@ -90,62 +93,92 @@ export default function Contact() {
               </svg>
             </div>
 
-            <div className="relative z-10">
-              <div className="flex items-center gap-3 mb-6">
-                <span className="h-[2px] w-8 bg-golomon-secondary"></span>
-                <span className="text-golomon-secondary font-bold text-sm tracking-widest uppercase">
-                  Get In Touch
-                </span>
+            <div className="relative z-10 flex flex-col h-full">
+  <div>
+    <div className="flex items-center mb-6">
+      <span className="text-golomon-secondary font-bold text-sm tracking-widest uppercase">
+        Consult an Expert
+      </span>
+    </div>
+                <h2 className="text-4xl font-extrabold mb-6 tracking-tight leading-tight">
+                  Powering <span className="text-golomon-secondary">Progress.</span>
+                </h2>
+                <p className="text-blue-100 text-base md:text-lg mb-10 leading-relaxed">
+                  Our team welcomes enquiries regarding our technology solutions, services, and potential areas of collaboration. We are committed to providing timely and professional assistance.
+                </p>
+
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0 border border-white/20">
+                      <Mail className="w-5 h-5 text-golomon-secondary" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-blue-200 font-medium mb-0.5">Email Us</p>
+                      <a href="mailto:info@golomon.com" className="text-lg font-bold hover:text-golomon-secondary transition-colors">
+                        info@golomon.com
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0 border border-white/20">
+                      <Phone className="w-5 h-5 text-golomon-secondary" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-blue-200 font-medium mb-0.5">Call Us</p>
+                      <a href="tel:+254142426126" className="text-lg font-bold hover:text-golomon-secondary transition-colors">
+                        +254 142 426 126
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0 border border-white/20">
+                      <Clock className="w-5 h-5 text-golomon-secondary" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-blue-200 font-medium mb-0.5">Business Hours</p>
+                      <p className="text-lg font-bold">
+                        Monday - Friday <br />
+                        <span className="text-base font-semibold text-blue-50">09:00 - 17:00 (Hrs)</span>
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0 border border-white/20">
+                      <MapPin className="w-5 h-5 text-golomon-secondary" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-blue-200 font-medium mb-0.5">Location</p>
+                      <p className="text-lg font-bold">
+                        Muthaiga, Nairobi, Kenya
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <h2 className="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight leading-tight">
-                Let&apos;s build your digital foundation.
-              </h2>
-              <p className="text-blue-100 text-lg mb-12 leading-relaxed">
-                Whether you need to modernize legacy systems, build custom software, or secure lifecycle support, our team in Nairobi is ready to help you achieve measurable value.
-              </p>
 
-              <div className="space-y-8">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0 border border-white/20">
-                    <Mail className="w-5 h-5 text-golomon-secondary" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-blue-200 font-medium mb-1">Email Us</p>
-                    <a href="mailto:info@golomon.com" className="text-lg font-bold hover:text-golomon-secondary transition-colors">
-                      info@golomon.com
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0 border border-white/20">
-                    <Phone className="w-5 h-5 text-golomon-secondary" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-blue-200 font-medium mb-1">Call Us</p>
-                    <a href="tel:+254700000000" className="text-lg font-bold hover:text-golomon-secondary transition-colors">
-                      +254 700 000 000
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0 border border-white/20">
-                    <MapPin className="w-5 h-5 text-golomon-secondary" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-blue-200 font-medium mb-1">Visit Us</p>
-                    <p className="text-lg font-bold">
-                      Nairobi, Kenya
-                    </p>
-                  </div>
-                </div>
+              
+              {/* Embedded Google Map */}
+              <div className="mt-10 rounded-2xl overflow-hidden border border-white/20 h-48 sm:h-56 relative shadow-inner w-full flex-shrink-0">
+                <iframe 
+                  src="https://maps.google.com/maps?q=-1.2541,36.8340&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+                  width="100%" 
+                  height="100%" 
+                  style={{ border: 0 }} 
+                  allowFullScreen 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="absolute inset-0"
+                  title="Golomon Location Map"
+                ></iframe>
               </div>
             </div>
           </div>
 
           {/* Right: Contact Form */}
-          <div className="w-full lg:w-7/12 p-12 lg:p-16 bg-white flex flex-col justify-center relative">
+          <div className="w-full lg:w-7/12 p-8 sm:p-12 lg:p-16 bg-white flex flex-col justify-center relative">
             
             {isSuccess && (
               <div className="absolute inset-0 bg-white/95 backdrop-blur-sm z-20 flex flex-col items-center justify-center text-center p-8">
@@ -153,7 +186,7 @@ export default function Contact() {
                   <CheckCircle className="w-10 h-10" />
                 </div>
                 <h3 className="text-3xl font-bold text-slate-900 mb-2">Message Sent!</h3>
-                <p className="text-lg text-slate-600">
+                <p className="text-lg text-slate-600 max-w-md">
                   Thank you for reaching out. Our team will review your inquiry and get back to you shortly.
                 </p>
               </div>
@@ -247,10 +280,8 @@ export default function Contact() {
 
                 {isDropdownOpen && (
                   <>
-                    {/* Invisible overlay to catch clicks outside the dropdown */}
                     <div className="fixed inset-0 z-10" onClick={() => setIsDropdownOpen(false)}></div>
-                    
-                    <div className="absolute z-20 w-full mt-2 bg-white border border-slate-100 rounded-xl shadow-xl overflow-hidden py-2 animate-in fade-in slide-in-from-top-2 duration-200">
+                    <div className="absolute z-20 w-full mt-2 bg-white border border-slate-100 rounded-xl shadow-xl overflow-hidden py-2 animate-in fade-in slide-in-from-top-2 duration-200 max-h-64 overflow-y-auto">
                       {serviceOptions.map((option) => (
                         <button
                           key={option.value}
@@ -258,7 +289,7 @@ export default function Contact() {
                           onClick={() => {
                             setFormData(prev => ({ ...prev, service: option.value }));
                             setIsDropdownOpen(false);
-                            setError(""); // Clear error if they select an option
+                            setError("");
                           }}
                           className="w-full px-5 py-3 text-left flex items-center gap-3 hover:bg-[#ECF5FB] transition-colors group"
                         >

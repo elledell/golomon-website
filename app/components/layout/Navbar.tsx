@@ -10,11 +10,10 @@ export default function Navbar() {
 
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "Challenges", href: "#challenges" },
-    { name: "About Us", href: "#about" },
-    { name: "Solutions", href: "#solutions" },
-    { name: "Process", href: "#how-we-work" },
-    { name: "Insights", href: "#insights" },
+    { name: "About Us", href: "/about" },
+    { name: "Our Expertise", href: "/solutions" },
+    { name: "Process", href: "/#how-we-work" },
+    { name: "Insights", href: "/insights" },
   ];
 
   return (
@@ -22,18 +21,16 @@ export default function Navbar() {
       <nav className="w-full sticky top-0 z-40 bg-white shadow-sm border-b border-gray-100 transition-all duration-300">
         <div className="max-w-[1400px] mx-auto px-4 lg:px-12 flex justify-between items-center h-20">
           
-          {/* Brand Logo - Reverted to your original clean styling */}
+          {/* Brand Logo - Increased Size */}
           <Link href="/" className="flex items-center group w-fit">
             <Image 
-              src="/logo.png" 
-              alt="Golomon Logo" 
-              width={42} 
-              height={42} 
+              src="/Wordmark.png" 
+              alt="Golomon Wordmark" 
+              width={220} 
+              height={50} 
               className="object-contain group-hover:scale-105 transition-transform duration-300"
+              priority
             />
-            <span className="text-golomon-primary font-bold text-xl tracking-widest hidden sm:block ml-1">
-              OLOMON
-            </span>
           </Link>
 
           {/* Desktop Navigation Links */}
@@ -51,7 +48,7 @@ export default function Navbar() {
 
           {/* Right Action Area (Desktop & Mobile) */}
           <div className="flex items-center gap-3">
-            {/* Contact Us Button - Now routes to the dedicated page */}
+            {/* Contact Us Button */}
             <Link
               href="/contact"
               className="bg-golomon-secondary text-white px-4 py-2.5 lg:px-6 lg:py-2.5 rounded-md text-sm font-semibold hover:bg-orange-700 transition-colors shadow-sm"
@@ -87,16 +84,14 @@ export default function Navbar() {
       >
         <div className="flex justify-between items-center p-6 border-b border-gray-100">
           <div className="flex items-center">
+            {/* Mobile Brand Logo - Increased Size */}
             <Image 
-              src="/logo.png" 
-              alt="Golomon Logo" 
-              width={36} 
-              height={36} 
+              src="/Wordmark.png" 
+              alt="Golomon Wordmark" 
+              width={170} 
+              height={40} 
               className="object-contain"
             />
-            <span className="text-golomon-primary font-bold text-lg tracking-widest ml-1">
-              OLOMON
-            </span>
           </div>
           <button
             onClick={() => setIsOpen(false)}
