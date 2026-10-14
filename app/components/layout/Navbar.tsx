@@ -76,7 +76,7 @@ export default function Navbar() {
               onClick={(e) => handleNavClick(e, "/contact")}
               className="hidden sm:flex bg-golomon-secondary text-white px-4 py-2.5 lg:px-6 lg:py-2.5 rounded-md text-sm font-semibold hover:bg-orange-700 transition-colors shadow-sm"
             >
-              Contact Us
+              Let's Talk
             </Link>
 
             {/* Mobile Menu Toggle */}
@@ -149,7 +149,7 @@ export default function Navbar() {
               className="bg-golomon-secondary text-white text-center py-3.5 rounded-md font-bold shadow-sm hover:bg-orange-700 transition-colors"
               onClick={(e) => handleNavClick(e, "/contact")}
             >
-              Contact Us
+              Let's Talk
             </Link>
           </div>
         </div>

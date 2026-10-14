@@ -136,12 +136,12 @@ export default function AboutPage() {
           {/* Hero Actions including Downloadable Company Profile */}
           <div className="flex flex-wrap items-center justify-center gap-4">
             <a
-              href="/Golomon-Company-Profile.pdf"
-              download="Golomon-Company-Profile.pdf"
+              href="/Golomon Company Profile v2.pdf"
+              download="Golomon Company Profile v2.pdf"
               className="inline-flex items-center gap-2.5 bg-golomon-secondary text-white px-7 py-4 rounded-md font-bold text-sm sm:text-base hover:bg-orange-700 transition-colors shadow-md shadow-orange-500/20"
             >
               <Download className="w-5 h-5" />
-              Download Golomon's Profile (PDF)
+              Download Golomon's Profile 
             </a>
             <Link
               href="/contact"
@@ -434,16 +434,16 @@ export default function AboutPage() {
               href="/contact"
               className="inline-flex items-center gap-2 bg-golomon-secondary text-white px-8 py-4 rounded-md font-bold text-base md:text-lg hover:bg-orange-700 transition-colors shadow-lg"
             >
-              Consult an Expert
+              Talk to an Expert
               <ArrowRight className="w-5 h-5" />
             </Link>
             <a
-              href="/Golomon-Company-Profile.pdf"
-              download="Golomon-Company-Profile.pdf"
+              href="/Golomon Company Profile v2.pdf"
+              download="Golomon Company Profile v2.pdf"
               className="inline-flex items-center gap-2.5 bg-white text-golomon-primary px-8 py-4 rounded-md font-bold text-base md:text-lg hover:bg-blue-50 transition-colors shadow-lg"
             >
               <Download className="w-5 h-5" />
-              Golomon's Profile
+              Download Golomon's Profile
             </a>
           </div>
         </div>

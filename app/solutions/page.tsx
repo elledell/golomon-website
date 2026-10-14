@@ -106,13 +106,13 @@ export default function SolutionsPage() {
                 href="/contact"
                 className="bg-golomon-secondary text-white px-8 py-3.5 rounded-full font-bold hover:bg-orange-700 transition-colors shadow-md text-sm sm:text-base"
               >
-                Consult an Expert
+                Schedule a Consultation
               </Link>
               <a
                 href="#core-capabilities"
                 className="bg-transparent border-2 border-golomon-primary text-golomon-primary px-8 py-3.5 rounded-full font-bold hover:bg-golomon-primary hover:text-white transition-colors text-sm sm:text-base"
               >
-                Explore 6 Core Pillars
+                Explore our Services
               </a>
             </div>
           </div>

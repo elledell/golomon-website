@@ -63,7 +63,7 @@ export default function TopBar() {
               className="flex items-center gap-2 text-base font-bold tracking-wider hover:text-white/80 transition-colors"
             >
               <Phone size={18} className="text-white" />
-              +254 0 142 426 126
+              +254 (0) 142 426126
             </a>
 
             {/* Vertical Divider */}
@@ -89,7 +89,7 @@ export default function TopBar() {
               <div key={i} className="flex items-center gap-8 px-4">
                 <a href="tel:+2540142426126" className="flex items-center gap-2 font-bold text-base">
                   <Phone size={16} />
-                  +254 0 142 426 126
+                  +254 (0) 142 426126
                 </a>
                 <span className="flex items-center gap-2">
                   <MapPin size={16} />
