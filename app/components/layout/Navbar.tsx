@@ -12,8 +12,7 @@ export default function Navbar() {
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
     { name: "Our Expertise", href: "/solutions" },
-    { name: "Process", href: "/#how-we-work" },
-    { name: "Insights", href: "/insights" },
+    { name: "Our Process", href: "/process" },
   ];
 
   return (
@@ -29,6 +28,8 @@ export default function Navbar() {
               width={220} 
               height={50} 
               className="w-[140px] sm:w-[180px] lg:w-[220px] h-auto object-contain group-hover:scale-105 transition-transform duration-300"
+              onContextMenu={(e) => e.preventDefault()} 
+              draggable={false}
               priority
             />
           </Link>
@@ -91,6 +92,8 @@ export default function Navbar() {
               width={150} 
               height={34} 
               className="object-contain"
+              onContextMenu={(e) => e.preventDefault()} 
+              draggable={false}
             />
           </div>
           <button

@@ -23,27 +23,27 @@ export default function AboutPage() {
     {
       title: "Understanding Our Clients",
       description:
-        "We listen, understand the business, and design technology around real needs, objectives, and growth ambitions.",
+        "We listen, understand the business and design technology around real needs, objectives and growth ambitions.",
     },
     {
       title: "Delivering Practical Solutions",
       description:
-        "We provide integrated, fit-for-purpose, and scalable technology that solves real business challenges.",
+        "We provide integrated, fit-for-purpose and scalable technology that solves real business challenges.",
     },
     {
       title: "Creating Measurable Value",
       description:
-        "We focus on outcomes that improve efficiency, productivity, visibility, reliability, and overall business performance.",
+        "We focus on outcomes that improve efficiency, productivity, visibility, reliability and overall business performance.",
     },
     {
       title: "Pursuing Excellence and Innovation",
       description:
-        "We combine technical expertise, disciplined delivery, and continuous innovation to ensure our solutions remain relevant and effective.",
+        "We combine technical expertise, disciplined delivery and continuous innovation to ensure our solutions remain relevant and effective.",
     },
     {
       title: "Building Trusted Partnerships",
       description:
-        "We operate with integrity, accountability, and responsiveness, building lasting relationships with our clients and technology partners.",
+        "We operate with integrity, accountability and responsiveness, building lasting relationships with our clients and technology partners.",
     },
   ];
 
@@ -51,7 +51,7 @@ export default function AboutPage() {
     {
       title: "Professional Integrity",
       description:
-        "We uphold the highest standards of ethical conduct, transparency, and accountability in everything we do.",
+        "We uphold the highest standards of ethical conduct, transparency and accountability in everything we do.",
       Icon: ShieldCheck,
       bg: "bg-[#ECF5FB]",
       iconColor: "text-golomon-primary",
@@ -85,30 +85,30 @@ export default function AboutPage() {
   const whyChooseUs = [
     {
       number: "01",
-      title: "Professional and Structured Delivery",
+      title: "Professional & Disciplined Delivery",
       description:
-        "We apply disciplined processes, clear project governance, and structured workflows to ensure every engagement is delivered efficiently, transparently, and to a high professional standard.",
+        "We apply structured methodologies, robust project governance and clearly defined workflows to ensure every engagement is executed efficiently, transparently and in accordance with the highest standards of quality, accountability and professionalism.",
       Icon: Layers,
     },
     {
       number: "02",
-      title: "Clear and Responsive Communication",
+      title: "Transparent & Responsive Communication",
       description:
-        "We maintain open, timely, and purposeful communication throughout every engagement, ensuring expectations are clearly understood, progress is visible, and stakeholders remain aligned from planning through implementation and support.",
+        "We prioritize clear, timely and purposeful communication throughout every engagement, ensuring expectations are well defined, progress is transparent and stakeholders remain aligned from initial planning through implementation and ongoing support.",
       Icon: MessageSquare,
     },
     {
       number: "03",
-      title: "Practical, Scalable Solutions",
+      title: "Practical & Scalable Solutions",
       description:
-        "We deliver fit-for-purpose technology solutions designed around real business requirements. Our approach balances functionality, scalability, efficiency, and cost to ensure technology investments deliver sustainable business value.",
+        "We design and deliver fit-for-purpose technology solutions aligned with business requirements, balancing functionality, scalability, operational efficiency and cost-effectiveness to maximize technology investment and deliver sustainable business value.",
       Icon: Scaling,
     },
     {
       number: "04",
       title: "Client-Centred Partnerships",
       description:
-        "We take the time to understand each client's objectives, operational environment, and growth priorities. By working collaboratively and building trusted relationships, we provide solutions and ongoing support that evolve with our clients' needs.",
+        "We develop a deep understanding of each client's strategic objectives, operational environment and growth priorities. Through collaborative engagement and trusted long-term partnerships, we deliver tailored solutions and responsive support that adapt to evolving business needs and create lasting value.",
       Icon: Users,
     },
   ];
@@ -130,7 +130,7 @@ export default function AboutPage() {
           </h1>
           
           <p className="text-lg md:text-xl text-slate-600 max-w-3xl leading-relaxed mb-10">
-            Golomon Limited is a Technology Solutions Provider (TSP) delivering integrated IT products, services, and solutions that empower organizations to build, modernize, manage, and optimize their technology environments.
+            Golomon Limited is a Technology Solutions Provider (TSP) delivering integrated IT products, services and solutions that empower organizations to build, modernize, manage and optimize their technology environments.
           </p>
 
           {/* Hero Actions including Downloadable Company Profile */}
@@ -162,7 +162,7 @@ export default function AboutPage() {
             {/* Left Image Column */}
             <div className="lg:col-span-5 relative w-full h-[450px] lg:h-[580px] rounded-3xl overflow-hidden shadow-xl">
               <Image
-                src="/about.png"
+                src="/8.png"
                 alt="Golomon Limited Business Overview"
                 fill
                 className="object-cover"
@@ -190,18 +190,21 @@ export default function AboutPage() {
               </div>
 
               <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight mb-6 tracking-tight">
-                A Business-Outcome-Driven Approach to Technology.
+                Our Story
               </h2>
 
               <div className="space-y-4 text-slate-600 text-base md:text-lg leading-relaxed">
                 <p>
-                  Golomon was established in response to the growing demand for integrated, practical, and commercially viable technology solutions that align with business objectives and support sustainable growth. As organizations increasingly depend on technology to drive efficiency, competitiveness, and innovation, many continue to navigate fragmented IT environments characterized by legacy applications, manual processes, disconnected systems, standalone infrastructure, and disparate technology service providers.
+                  Golomon Limited was established to address the growing need for integrated, commercially viable technology solutions that align with business strategy, enhance operational performance and enable sustainable growth. As organizations increasingly rely on technology to drive efficiency, competitiveness and innovation, many continue to face fragmented IT environments, legacy systems, manual processes, disconnected platforms and complex multi-vendor ecosystems that constrain performance and limit business value.
                 </p>
                 <p>
-                  We address these challenges by combining strategic advisory, technical expertise, and integrated solutions to help organizations align their technology investments with operational priorities and long-term business goals. Rather than operating solely as a supplier of IT products, we work collaboratively with clients to understand their business models, strategic objectives, operational challenges, existing technology environments, and growth ambitions.
+                  We bridge this gap by combining strategic technology advisory, engineering expertise and integrated solution delivery to align technology investments with business priorities and long-term organizational objectives. Our approach extends beyond the provision of IT products and services. We work in partnership with our clients to understand their business models, strategic ambitions, operational challenges, existing technology landscapes as well as evolving requirements; translating these insights into practical, scalable and business-focused technology solutions.
                 </p>
                 <p>
-                  To deliver these capabilities, we leverage a broad ecosystem of technology platforms, hardware manufacturers, software vendors, distributors, cloud service providers, and specialist implementation partners. By adopting a flexible, vendor-aware, and solutions-oriented approach, Golomon helps organizations avoid one-size-fits-all technology decisions and pursue solutions that deliver measurable business value.
+                  Through a broad ecosystem of leading technology platforms, hardware manufacturers, software providers, cloud service partners, distributors and specialist implementation firms, Golomon delivers flexible, vendor-agnostic solutions tailored to each client's unique requirements. This ecosystem-driven approach enables us to navigate complex technology choices, integrate complementary capabilities and develop purpose-built solutions that maximize technology investments, strengthen operational resilience and deliver measurable business outcomes.
+                </p>
+                <p>
+                  At Golomon, our focus is on making technology work strategically for business; transforming complexity into clarity, investments into value and digital capabilities into sustainable competitive advantage.
                 </p>
               </div>
             </div>
@@ -236,10 +239,10 @@ export default function AboutPage() {
                 </div>
 
                 <p className="text-2xl lg:text-[1.65rem] font-bold text-slate-900 mb-6 leading-[1.35]">
-                  To help businesses harness technology to simplify operations, improve performance, and achieve sustainable growth through practical, integrated, and scalable solutions.
+                  To help businesses harness technology to simplify operations, improve performance and achieve sustainable growth through practical, integrated and scalable solutions.
                 </p>
                 <p className="text-base md:text-lg text-slate-600 leading-relaxed mb-10">
-                  We provide integrated, fit-for-purpose, and scalable technology that solves real business challenges and creates measurable operational value.
+                  We provide integrated, fit-for-purpose and scalable technology that solves real business challenges and creates measurable operational value.
                 </p>
               </div>
 
@@ -282,7 +285,7 @@ export default function AboutPage() {
                   To be a trusted leading technology solutions partner, enabling businesses to achieve sustainable growth through technology.
                 </p>
                 <p className="text-base md:text-lg text-slate-300 leading-relaxed mb-10">
-                  We operate with integrity, accountability, and responsiveness, building lasting relationships with our clients and technology partners.
+                  We operate with integrity, accountability and responsiveness, building lasting relationships with our clients and technology partners.
                 </p>
               </div>
 
@@ -416,11 +419,16 @@ export default function AboutPage() {
             <FileText className="w-8 h-8 text-white" />
           </div>
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
-            Ready to Modernize Your Technology Environment?
+            Ready to Advance Your Technology Strategy?
           </h2>
-          <p className="text-lg md:text-xl text-blue-100 mb-10 max-w-2xl leading-relaxed">
-            Partner with Golomon Limited for practical, scalable, and integrated technology solutions - or download our official company profile to share with your team.
-          </p>
+          <div className="text-lg md:text-xl text-blue-100 mb-10 max-w-2xl leading-relaxed space-y-4">
+            <p>
+              Partner with Golomon Limited to transform your technology environment through integrated, scalable as well as business-aligned solutions that drive operational excellence and measurable business outcomes.
+            </p>
+            <p>
+              Connect with our team to explore how we can support your strategic objectives or download our corporate profile to share our capabilities with your stakeholders.
+            </p>
+          </div>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link
               href="/contact"

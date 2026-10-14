@@ -17,18 +17,22 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           
           {/* Left: Image Area */}
-          <div className="relative w-full h-[450px] lg:h-[600px] rounded-3xl overflow-hidden shadow-xl">
+          <div 
+            className="relative w-full h-[450px] lg:h-[600px] rounded-3xl overflow-hidden shadow-xl select-none"
+            onContextMenu={(e) => e.preventDefault()}
+          >
             <Image
-              src="/about.png"
+              src="/8.png"
               alt="Golomon Limited Company Overview"
               fill
-              className="object-cover"
+              className="object-cover pointer-events-none"
+              draggable={false}
             />
             {/* Brand Accent Overlay */}
-            <div className="absolute inset-0 bg-golomon-primary/10 mix-blend-multiply"></div>
+            <div className="absolute inset-0 bg-golomon-primary/10 mix-blend-multiply pointer-events-none"></div>
             
             {/* Floating Overview Badge (No Location) */}
-            <div className="absolute bottom-6 left-6 right-6 sm:right-auto bg-white/95 backdrop-blur-sm p-6 rounded-2xl shadow-lg sm:max-w-[260px] border-b-4 border-golomon-secondary">
+            <div className="absolute bottom-6 left-6 right-6 sm:right-auto bg-white/95 backdrop-blur-sm p-6 rounded-2xl shadow-lg sm:max-w-[260px] border-b-4 border-golomon-secondary pointer-events-none">
               <span className="block text-3xl font-extrabold text-golomon-primary mb-1">
                 TSP
               </span>
@@ -43,7 +47,6 @@ export default function About() {
 
           {/* Right: Content Area */}
           <div className="flex flex-col justify-center">
-            {/* Removed the orange em dash span here */}
             <div className="flex items-center mb-4">
               <span className="text-golomon-secondary font-bold text-xs sm:text-sm tracking-widest uppercase">
                 COMPANY OVERVIEW
@@ -51,16 +54,26 @@ export default function About() {
             </div>
 
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 leading-[1.15] mb-6 tracking-tight">
-              Empowering Organizations to Build, Modernize & Optimize.
+              Your Trusted Partner in Technology and Digital Transformation
             </h2>
 
-            <p className="text-base md:text-lg text-slate-600 mb-4 leading-relaxed">
-              <strong>Golomon Limited</strong> is a Technology Solutions Provider (TSP) delivering integrated IT products, services, and solutions that empower organizations to build, modernize, manage, and optimize their technology environments through a comprehensive portfolio spanning IT Consulting & Tech Services, Cloud Computing, Software Development & SaaS, Technology Licensing & Procurement, Cybersecurity, and Artificial Intelligence (AI) & Automation.
-            </p>
+            <div className="space-y-4 mb-8">
+              <p className="text-base md:text-lg text-slate-600 leading-relaxed">
+                As a Kenyan Technology Solutions Provider (TSP), Golomon partners with organizations to turn technology into a strategic business advantage. We deliver integrated IT products, services and solutions tailored to help businesses build, modernize, manage and optimize their technology environments.
+              </p>
 
-            <p className="text-base md:text-lg text-slate-600 mb-8 leading-relaxed">
-              Leveraging a robust ecosystem of technology platforms, leading vendors, and specialist partners, Golomon designs and delivers integrated, business-focused solutions that simplify complex IT environments, strengthen operational capabilities, and connect the systems, infrastructure, and technologies organizations need to thrive and build scalable, secure, and future-ready digital environments.
-            </p>
+              <p className="text-base md:text-lg text-slate-600 leading-relaxed">
+                Our comprehensive portfolio spans IT Consulting and Technology Services, Cloud Computing, Software Development and SaaS, Technology Licensing and Procurement, Cybersecurity, Artificial Intelligence (AI) and Automation; we provide the expertise and capabilities organizations need to operate efficiently, innovate confidently and scale sustainably.
+              </p>
+
+              <p className="text-base md:text-lg text-slate-600 leading-relaxed">
+                Through a strong ecosystem of leading technology vendors, trusted platforms and specialist partners, we bring together the right expertise and technologies to address your unique business challenges. Our approach simplifies complex IT environments, connects systems and infrastructure, strengthens operational performance as well as builds secure, scalable and future-ready digital foundations aligned with your business goals.
+              </p>
+
+              <p className="text-base md:text-lg text-slate-600 leading-relaxed">
+                At Golomon, we go beyond delivering technology. We build lasting partnerships, enable intelligent ways of working and help your organization unlock greater value from every technology investment.
+              </p>
+            </div>
 
             {/* Mission & Vision Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
@@ -70,7 +83,7 @@ export default function About() {
                   <h3 className="font-bold text-slate-900 text-base">Our Mission</h3>
                 </div>
                 <p className="text-slate-600 text-sm leading-relaxed">
-                  To help businesses harness technology to simplify operations, improve performance, and achieve sustainable growth through practical, integrated, and scalable solutions.
+                  To help businesses harness technology to simplify operations, improve performance and achieve sustainable growth through practical, integrated and scalable solutions.
                 </p>
               </div>
 

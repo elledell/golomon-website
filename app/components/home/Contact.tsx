@@ -193,7 +193,7 @@ export default function Contact() {
             )}
 
             <h3 className="text-3xl font-bold text-slate-900 mb-8">
-              Send us a message
+              Book Consultation
             </h3>
             
             {error && (
@@ -329,7 +329,7 @@ export default function Contact() {
                   </>
                 ) : (
                   <>
-                    Send Message
+                    Book Consultation
                     <Send className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                   </>
                 )}

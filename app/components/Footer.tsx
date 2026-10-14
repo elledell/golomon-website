@@ -14,6 +14,13 @@ const LinkedinIcon = () => (
   </svg>
 );
 
+// Inline SVG for WhatsApp
+const WhatsappIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+  </svg>
+);
+
 export default function Footer() {
   const [currentYear, setCurrentYear] = useState(2026);
   
@@ -24,12 +31,13 @@ export default function Footer() {
   return (
     <footer className="w-full bg-slate-950 text-slate-300 border-t border-slate-900 pt-20 pb-8 overflow-hidden relative mt-auto">
       
-      {/* Background Tech Accent */}
-      <div className="absolute top-0 right-0 w-1/2 h-full opacity-5 pointer-events-none">
-        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-          <path d="M 100 0 L 200 100 L 400 100" stroke="#ECF5FB" strokeWidth="2" fill="none" />
-          <circle cx="400" cy="100" r="4" fill="#CD5007" />
-        </svg>
+      {/* Background Tech Accent - Circuit Nodes */}
+      <div className="absolute inset-0 z-0 pointer-events-none opacity-10">
+        <img 
+          src="/circui.jfif" 
+          alt="Circuit Background" 
+          className="w-full h-full object-cover"
+        />
       </div>
 
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
@@ -40,7 +48,7 @@ export default function Footer() {
           {/* 1. Brand Column */}
           <div className="lg:col-span-4 flex flex-col">
             
-            {/* Brand Logo - Updated back to the standalone 'G' logo.png */}
+            {/* Brand Logo */}
             <Link href="/" className="flex items-center mb-8 w-fit group">
               <Image 
                 src="/logo.png" 
@@ -51,12 +59,21 @@ export default function Footer() {
               />
             </Link>
 
+            <h4 className="text-white font-bold mb-4 tracking-wide text-lg">
+              Your Strategic Partner in Integrated Technology Solutions.
+            </h4>
+
             <p className="text-slate-400 leading-relaxed mb-8 pr-4">
-              Your trusted partner for integrated IT solutions. We design, build, and support technology shaped around how East African enterprises actually work.
+              Golomon Limited delivers tailored, end-to-end technology solutions that align with the operational realities, strategic priorities and growth ambitions of East African enterprises; enabling organizations to modernize, integrate and optimize their technology environments for measurable business impact.
             </p>
+            
+            {/* Social Icons */}
             <div className="flex items-center gap-4">
               <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center hover:border-golomon-secondary hover:text-golomon-secondary transition-all shadow-sm">
                 <LinkedinIcon />
+              </a>
+              <a href="https://wa.me/254142426126" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center hover:border-[#25D366] hover:text-[#25D366] transition-all shadow-sm">
+                <WhatsappIcon />
               </a>
             </div>
           </div>
@@ -68,8 +85,7 @@ export default function Footer() {
               <li><Link href="/" className="hover:text-white transition-colors flex items-center gap-2 group"><ArrowRight className="w-3 h-3 text-golomon-secondary opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all" /> Home</Link></li>
               <li><Link href="/about" className="hover:text-white transition-colors flex items-center gap-2 group"><ArrowRight className="w-3 h-3 text-golomon-secondary opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all" /> About Us</Link></li>
               <li><Link href="/solutions" className="hover:text-white transition-colors flex items-center gap-2 group"><ArrowRight className="w-3 h-3 text-golomon-secondary opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all" /> Our Expertise</Link></li>
-              <li><Link href="/#how-we-work" className="hover:text-white transition-colors flex items-center gap-2 group"><ArrowRight className="w-3 h-3 text-golomon-secondary opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all" /> Process</Link></li>
-              <li><Link href="/insights" className="hover:text-white transition-colors flex items-center gap-2 group"><ArrowRight className="w-3 h-3 text-golomon-secondary opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all" /> Insights</Link></li>
+              <li><Link href="/process" className="hover:text-white transition-colors flex items-center gap-2 group"><ArrowRight className="w-3 h-3 text-golomon-secondary opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all" /> Process</Link></li>
               <li><Link href="/contact" className="hover:text-white transition-colors flex items-center gap-2 group"><ArrowRight className="w-3 h-3 text-golomon-secondary opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all" /> Contact Us</Link></li>
             </ul>
           </div>
@@ -97,7 +113,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-golomon-secondary flex-shrink-0" />
-                <a href="tel:+254142426126" className="hover:text-white transition-colors">(+254) 01-42-42-61-26</a>
+                <a href="tel:+2540142426126" className="hover:text-white transition-colors">(+254) 0 142 426 126</a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-golomon-secondary flex-shrink-0" />

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Search, PenTool, Cpu, RefreshCw } from "lucide-react";
+import { Search, PenTool, Cpu, Rocket, RefreshCw } from "lucide-react";
 
 export default function HowWeWork() {
   const [visibleSections, setVisibleSections] = useState<number[]>([]);
@@ -10,26 +10,52 @@ export default function HowWeWork() {
   const steps = [
     {
       id: 1,
-      title: "Discovery & Consultation",
-      description: "We listen, understand the business, and evaluate your current infrastructure to design technology around your real needs and growth ambitions.",
+      title: "Discovery and Needs Assessment",
+      points: [
+        { label: "Stakeholder Interviews", text: "We meet with business leaders and end users to map out current workflows and operational pain points." },
+        { label: "Technical Audit", text: "Golomon evaluates existing IT infrastructure, hardware, legacy software and security gaps." },
+        { label: "Requirements Gathering", text: "Our team defines clear project objectives, key performance indicators (KPIs) and budget parameters." }
+      ],
       icon: Search,
     },
     {
       id: 2,
-      title: "Strategic Architecture",
-      description: "We modernize legacy systems and map out integrated, scalable technology solutions that directly address your business challenges.",
+      title: "Strategy and Solution Design",
+      points: [
+        { label: "Solution Architecture", text: "Our solution architects map out the technical blueprint, focusing on scalability, resilience and security." },
+        { label: "Vendor & Stack Selection", text: "We choose the right combination of cloud services, hardware, custom code or third-party software (such as productivity tools, business applications or ERP platforms)." },
+        { label: "Roadmap & Proposal", text: "We deliver a data-driven implementation plan, cost breakdown and timeline to the client for approval." }
+      ],
       icon: PenTool,
     },
     {
       id: 3,
-      title: "Implementation & Integration",
-      description: "Combining technical expertise and disciplined delivery, we seamlessly deploy and integrate cohesive solutions into your workflows.",
+      title: "Development and Customization",
+      points: [
+        { label: "Proof of Concept (PoC) / MVP", text: "Our engineers and developers build a scaled-down version or pilot test to validate core assumptions before full-scale deployment." },
+        { label: "Coding and Integration", text: "They write and develop custom software, configure cloud or on-premise hardware and integrate disparate systems using industry standards." },
+        { label: "Quality Assurance (QA) Testing", text: "We then run security audits, performance stress tests and bug fixes." }
+      ],
       icon: Cpu,
     },
     {
       id: 4,
-      title: "Lifecycle Support & Growth",
-      description: "We focus on outcomes that improve efficiency by providing ongoing management, technical support, and continuous innovation.",
+      title: "Deployment and Implementation",
+      points: [
+        { label: "System Rollout", text: "Golomon install, configure and launch the new technology into the live production environment." },
+        { label: "User Training", text: "We conduct workshops, supply documentation and onboard employees to ensure high adoption rates." },
+        { label: "Pilot Monitoring", text: "We track early performance metrics and resolve immediate operational hiccups." }
+      ],
+      icon: Rocket,
+    },
+    {
+      id: 5,
+      title: "Ongoing Support and Optimization",
+      points: [
+        { label: "Managed IT Support", text: "Golomon provides continuous helpdesk troubleshooting, server monitoring and system maintenance." },
+        { label: "Updates and Upgrades", text: "We apply security patches, feature updates and infrastructure scaling as the business grows." },
+        { label: "Feedback Loops", text: "Review performance data periodically to suggest proactive technological enhancements." }
+      ],
       icon: RefreshCw,
     },
   ];
@@ -46,7 +72,7 @@ export default function HowWeWork() {
           }
         });
       },
-      { threshold: 0.25 }
+      { threshold: 0.15 } // Slightly lowered threshold since cards are now taller with bullet points
     );
 
     sectionRefs.current.forEach((ref) => {
@@ -58,18 +84,17 @@ export default function HowWeWork() {
 
   return (
     <section className="w-full py-24 relative overflow-hidden">
-      
-      {/* Background Image & Brand Blue Overlays */}
-      <div className="absolute inset-0 z-0">
+     {/* Background Image & Brand Blue Overlays */}
+      <div className="absolute inset-0 z-0 bg-[#001a4d]">
         <img
-          src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80"
-          alt="Technology Background"
-          className="w-full h-full object-cover"
+          src="/11.png"
+          alt="Global Network Map"
+          className="w-full h-full object-cover opacity-100"
         />
-        {/* Vivid Blue mix-blend to tint the image */}
-        <div className="absolute inset-0 bg-golomon-primary/80 mix-blend-multiply"></div>
-        {/* A secondary dark blue gradient to ensure text readability while staying perfectly on-brand */}
-        <div className="absolute inset-0 bg-gradient-to-br from-golomon-primary/90 via-golomon-primary/80 to-[#001a4d]/95"></div>
+        {/* Lightened mix-blend tint */}
+        <div className="absolute inset-0 bg-golomon-primary/30 mix-blend-multiply"></div>
+        {/* Lightened secondary dark blue gradient so the map is highly visible */}
+        <div className="absolute inset-0 bg-gradient-to-br from-golomon-primary/40 via-[#00225A]/50 to-[#001a4d]/70"></div>
       </div>
 
       <div className="max-w-[1200px] mx-auto px-6 lg:px-12 relative z-10">
@@ -138,12 +163,16 @@ export default function HowWeWork() {
                         <span className="text-4xl font-extrabold text-white/20 mb-2 block transition-colors duration-500 group-hover:text-golomon-secondary/40">
                           0{step.id}
                         </span>
-                        <h3 className="text-2xl font-bold text-white mb-3">
+                        <h3 className="text-2xl font-bold text-white mb-5">
                           {step.title}
                         </h3>
-                        <p className="text-blue-50 leading-relaxed">
-                          {step.description}
-                        </p>
+                        <ul className={`space-y-3 ${isEven ? 'md:text-left' : 'md:text-right text-left'}`}>
+                          {step.points.map((point, idx) => (
+                            <li key={idx} className="text-blue-50 leading-relaxed text-[15px]">
+                              <strong className="text-white font-semibold">{point.label}:</strong> {point.text}
+                            </li>
+                          ))}
+                        </ul>
                       </div>
                     </div>
                   </div>

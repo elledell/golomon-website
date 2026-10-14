@@ -3,7 +3,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { 
-  CheckCircle2, 
   Puzzle, 
   Code2, 
   ArrowRight, 
@@ -14,8 +13,7 @@ import {
   Cloud, 
   ShieldCheck, 
   Code, 
-  Cpu,
-  Download
+  Cpu
 } from "lucide-react";
 
 export default function SolutionsPage() {
@@ -76,39 +74,6 @@ export default function SolutionsPage() {
     },
   ];
 
-  const whyChooseGolomon = [
-    {
-      title: "Professional & Structured Delivery",
-      description:
-        "We apply disciplined processes, clear project governance, and structured workflows to ensure every engagement is delivered efficiently, transparently, and to a high professional standard.",
-    },
-    {
-      title: "Clear & Responsive Communication",
-      description:
-        "We maintain open, timely, and purposeful communication throughout every engagement, ensuring expectations are clearly understood, progress is visible, and stakeholders remain aligned.",
-    },
-    {
-      title: "Practical, Scalable Solutions",
-      description:
-        "We deliver fit-for-purpose technology solutions designed around real business requirements, balancing functionality, scalability, efficiency, and cost for sustainable value.",
-    },
-    {
-      title: "Client-Centred Partnerships",
-      description:
-        "We take the time to understand each client's objectives, operational environment, and growth priorities, providing solutions and ongoing support that evolve with your needs.",
-    },
-    {
-      title: "Vendor-Aware Ecosystem",
-      description:
-        "We leverage a broad ecosystem of hardware manufacturers, software vendors, distributors, cloud providers, and specialist partners to avoid one-size-fits-all decisions.",
-    },
-    {
-      title: "Measurable Business Value",
-      description:
-        "We focus on outcomes that improve efficiency, productivity, visibility, reliability, and overall business performance across your entire technology environment.",
-    },
-  ];
-
   return (
     <main className="w-full bg-[#F8FAFC] flex flex-col">
       
@@ -116,7 +81,6 @@ export default function SolutionsPage() {
       <section className="relative w-full pt-8 pb-16 lg:pt-12 lg:pb-20 overflow-hidden bg-white border-b border-slate-100">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-8 items-center">
           
-          {/* Left: Text & CTA */}
           <div className="flex flex-col">
             <div className="flex items-center mb-4">
               <span className="text-golomon-primary font-bold text-xs sm:text-sm tracking-widest uppercase">
@@ -125,16 +89,16 @@ export default function SolutionsPage() {
             </div>
 
             <h1 
-              className="text-[2.5rem] sm:text-5xl lg:text-[4.5rem] font-black text-[#001433] leading-[1.05] mb-6 tracking-tight"
+              className="text-[2.5rem] sm:text-5xl lg:text-6xl font-black text-[#001433] leading-[1.1] mb-6 tracking-tight"
               style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}
             >
-              Fit-for-purpose<br/>
-              technology that<br/>
-              drives <span className="text-golomon-secondary">measurable<br/>value.</span>
+              Purpose-Built<br/>
+              Technology.<br/>
+              <span className="text-golomon-secondary">Measurable Business<br/>Impact.</span>
             </h1>
             
             <p className="text-base sm:text-lg text-slate-700 leading-relaxed mb-8 max-w-xl">
-              Our capabilities span technology advisory, procurement and licensing, software development, cloud computing, cybersecurity, data management, artificial intelligence, and technology-enabled business applications.
+              Our capabilities encompass strategic technology advisory, IT procurement and licensing, custom software development, cloud and computing infrastructure, cybersecurity, data management and analytics, artificial intelligence and automation as well as enterprise business applications; delivering integrated, scalable solutions that optimize performance, strengthen resilience and accelerate business transformation.
             </p>
             
             <div className="flex flex-wrap items-center gap-4 mb-10">
@@ -153,7 +117,6 @@ export default function SolutionsPage() {
             </div>
           </div>
 
-          {/* Right: Actual Image replaced manual dashboard */}
           <div className="relative w-full h-[320px] sm:h-[400px] lg:h-[500px] flex items-center justify-center lg:justify-end">
             <Image 
               src="/solutions.jfif"
@@ -269,7 +232,6 @@ export default function SolutionsPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
             
-            {/* Card 1: Ecosystem Procurement & Integration */}
             <div className="bg-white p-8 lg:p-10 rounded-[2rem] shadow-lg border border-slate-100 relative">
               <div className="flex justify-between items-start mb-6">
                 <div className="w-12 h-12 bg-[#ECF5FB] rounded-xl flex items-center justify-center text-golomon-primary">
@@ -304,7 +266,6 @@ export default function SolutionsPage() {
               </div>
             </div>
 
-            {/* Card 2: Bespoke Software, SaaS & AI */}
             <div className="bg-white p-8 lg:p-10 rounded-[2rem] shadow-lg border border-slate-100 relative">
               <div className="flex justify-between items-start mb-6">
                 <div className="w-12 h-12 bg-orange-50 rounded-xl flex items-center justify-center text-golomon-secondary">
@@ -340,80 +301,6 @@ export default function SolutionsPage() {
             </div>
 
           </div>
-        </div>
-      </section>
-
-      {/* 4. WHY CHOOSE GOLOMON */}
-      <section className="w-full py-24 bg-[#F8FAFC]">
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
-              Why Organizations Choose <span className="text-golomon-secondary">Golomon</span>
-            </h2>
-            <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto">
-              Your trusted Technology Solutions Provider (TSP) committed to excellence, accountability, and sustainable growth.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-10">
-            {whyChooseGolomon.map((item, idx) => (
-              <div key={idx} className="flex gap-4">
-                <CheckCircle2 className="w-6 h-6 text-golomon-primary flex-shrink-0 mt-1" />
-                <div>
-                  <h4 className="font-bold text-lg text-slate-900 mb-2">
-                    {item.title}
-                  </h4>
-                  <p className="text-sm text-slate-600 leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 5. BOTTOM CTA BANNER */}
-      <section className="w-full pb-24 bg-[#F8FAFC] px-6 lg:px-12">
-        <div className="max-w-[1200px] mx-auto bg-white rounded-[2.5rem] shadow-xl p-10 sm:p-12 lg:p-20 relative overflow-hidden text-center border border-slate-100">
-          
-          <div className="absolute inset-0 opacity-40 pointer-events-none">
-            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-              <path d="M 0 50 L 150 50 L 250 150 L 400 150" stroke="#003690" strokeWidth="2" fill="none" />
-              <path d="M 100 0 L 100 100 L 200 200" stroke="#CD5007" strokeWidth="2" fill="none" />
-              <circle cx="400" cy="150" r="4" fill="#003690" />
-              <circle cx="200" cy="200" r="4" fill="#CD5007" />
-              
-              <path d="M 100% 80 L calc(100% - 150px) 80 L calc(100% - 250px) 180" stroke="#CD5007" strokeWidth="2" fill="none" />
-              <circle cx="calc(100% - 250px)" cy="180" r="4" fill="#CD5007" />
-            </svg>
-          </div>
-
-          <div className="relative z-10 flex flex-col items-center">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight max-w-3xl">
-              Align your enterprise investments with <span className="text-golomon-primary">measurable business outcomes</span>
-            </h2>
-            <p className="text-slate-600 text-base sm:text-lg max-w-2xl mb-10">
-              Engage with our team for a business discovery consultation or download our company profile to review our full suite of capabilities.
-            </p>
-            
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link
-                href="/contact"
-                className="bg-golomon-secondary text-white px-8 py-4 rounded-full font-bold hover:bg-orange-700 transition-colors shadow-md flex items-center gap-2 text-sm sm:text-base"
-              >
-                Free Consulation <ArrowRight className="w-5 h-5" />
-              </Link>
-              <a
-                href="/Golomon-Company-Profile.pdf"
-                download="Golomon-Company-Profile.pdf"
-                className="bg-white border-2 border-slate-200 text-slate-700 px-8 py-4 rounded-full font-bold hover:border-golomon-primary hover:text-golomon-primary transition-colors flex items-center gap-2 text-sm sm:text-base"
-              >
-                <Download className="w-5 h-5" /> Download Golomon's Profile (PDF)
-              </a>
-            </div>
-          </div>
-          
         </div>
       </section>
 

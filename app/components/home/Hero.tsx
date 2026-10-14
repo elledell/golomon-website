@@ -13,43 +13,43 @@ export default function Hero() {
       id: 1,
       image: "/hero1.png",
       tagline: "POWERING PROGRESS.",
-      title: "Integrated Technology Solutions That Empower Growth",
+      title: "Technology Solutions Tailored to Your Enterprise.",
       description: (
         <>
-          As a leading Technology Solutions Provider (TSP), <span className="text-golomon-secondary font-bold">Golomon</span> delivers integrated IT products, services, and solutions that empower organizations to build, modernize, manage, and optimize their technology environments.
+          As a leading Technology Solutions Provider (TSP), <span className="text-golomon-secondary font-bold">Golomon</span> delivers integrated IT solutions, products and services that enable organizations to modernize infrastructure, optimize operations, strengthen performance as well as accelerate sustainable business growth.
         </>
       ),
     },
     {
       id: 2,
-      image: "/hero2.png",
+      image: "/hero22.png",
       tagline: "PRACTICAL, INTEGRATED, SCALABLE.",
-      title: "Simplifying Complex IT Environments",
+      title: "Simplifying Technology. Advancing Your Business.",
       description: (
         <>
-          <span className="text-golomon-secondary font-bold">Golomon</span> designs and delivers business-focused solutions that strengthen operational capabilities, connect disconnected systems, and build scalable, secure, and future-ready digital environments.
+          <span className="text-golomon-secondary font-bold">Golomon</span> delivers business-aligned technology solutions that streamline operations, integrate disparate systems as well as establish secure, scalable and future-ready IT environments that drive efficiency, resilience and sustainable business growth.
         </>
       ),
     },
     {
       id: 3,
-      image: "/hero3.png",
+      image: "/hero33.png",
       tagline: "YOUR TRUSTED TECHNOLOGY PARTNER.",
-      title: "Business-Outcome-Driven Technology Transformation",
+      title: "Technology Transformation. Measurable Business Impact.",
       description: (
         <>
-          <span className="text-golomon-secondary font-bold">Golomon</span> combines strategic advisory, technical expertise, and a robust ecosystem of leading vendors and specialist partners to help your organization achieve measurable business value and sustainable growth.
+          <span className="text-golomon-secondary font-bold">Golomon</span> combines strategic advisory, deep technical expertise and a strong ecosystem of leading technology vendors as well as specialized partners to deliver measurable business outcomes, accelerate digital transformation and enable sustainable organizational growth.
         </>
       ),
     },
     {
       id: 4,
-      image: "/hero-four.png", // REMEMBER: Change this if you rename the file to clear the cache!
+      image: "/hero44.png", // REMEMBER: Change this if you rename the file to clear the cache!
       tagline: "SECURE & RESILIENT INFRASTRUCTURE.",
-      title: "Building the Foundation for Your Digital Future",
+      title: "Your Digital Foundation. Built for Growth.",
       description: (
         <>
-          From cloud computing to enterprise cybersecurity, <span className="text-golomon-secondary font-bold">Golomon</span> provides robust, end-to-end technology infrastructure designed to protect your data and ensure seamless, scalable operations.
+          <span className="text-golomon-secondary font-bold">Golomon</span> delivers secure, resilient and scalable technology solutions tailored to your enterprise; protecting critical data, optimizing operations as well as enabling business continuity and sustainable digital growth.
         </>
       ),
     },
@@ -69,7 +69,7 @@ export default function Hero() {
   useEffect(() => {
     const timer = setInterval(() => {
       nextSlide();
-    }, 6000);
+    }, 6000); // CHANGE THIS NUMBER TO ADJUST SLIDE DURATION
     return () => clearInterval(timer);
   }, []);
 
@@ -179,6 +179,7 @@ export default function Hero() {
           <Image
             src={slides[nextIndex].image}
             alt="Next slide preview"
+            
             fill
             className="object-cover"
           />

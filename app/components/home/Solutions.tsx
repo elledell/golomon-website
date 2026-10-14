@@ -8,25 +8,25 @@ export default function Solutions() {
     {
       id: 1,
       title: "Custom Software Solutions",
-      description: "Tailored business applications and scalable software designed to meet your specific operational needs and workflows.",
+      description: "Purpose-built software applications engineered around your business objectives, operational workflows and evolving requirements; driving process automation, enhancing productivity and enabling scalable digital transformation.",
       icon: Code,
     },
     {
       id: 2,
       title: "Computing Infrastructure",
-      description: "Modernized legacy environments and robust computing architectures built for resilience, efficiency, and growth.",
+      description: "Modern, scalable computing architectures and infrastructure modernization solutions designed to strengthen resilience, optimize performance and enhance operational efficiency.",
       icon: Server,
     },
     {
       id: 3,
       title: "Systems Integration",
-      description: "Cohesive integration of technology platforms and specialist vendors to simplify complex IT environments.",
+      description: "Seamlessly unifying technology platforms, enterprise systems and strategic technology partners into a cohesive, interoperable ecosystem that reduces complexity, enhances operational efficiency and enables scalable business performance.",
       icon: LayoutTemplate,
     },
     {
       id: 4,
-      title: "Lifecycle Support",
-      description: "Ongoing management, hardware licensing, and strategic support to ensure your technology investments deliver continuous value.",
+      title: "Technology Lifecycle Management & Support",
+      description: "Comprehensive lifecycle management, hardware and software licensing and proactive technical support to optimize technology performance, maximize return on investment as well as ensure long-term reliability, security and business continuity.",
       icon: ShieldCheck,
     },
   ];
@@ -45,12 +45,12 @@ export default function Solutions() {
             </div>
             
             <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 leading-[1.15] mb-6 tracking-tight">
-              End-to-end <br />
+              End-to-End <br />
               Digital Solutions
             </h2>
             
             <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-              Comprehensive tools designed to modernize every aspect of your technology environment and drive sustainable growth.
+              Integrated, enterprise-grade solutions that modernize your technology ecosystem, optimize operational performance and accelerate sustainable business growth.
             </p>
             
             <Link
