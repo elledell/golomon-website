@@ -78,13 +78,13 @@ export default function ContactPage() {
   return (
     <main className="w-full bg-[#F8FAFC] flex flex-col min-h-screen">
       
-      {/* Page Header */}
-      <section className="w-full pt-28 lg:pt-36 pb-16 bg-white border-b border-slate-200">
+      {/* Page Header - Whitespace Reduced */}
+      <section className="w-full pt-8 lg:pt-12 pb-12 bg-white border-b border-slate-200">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 text-center">
           <span className="text-golomon-secondary font-bold text-sm tracking-widest uppercase mb-4 block">
             Let's Talk
           </span>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 mb-8 tracking-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 mb-6 tracking-tight">
             Contact <span className="text-golomon-primary">Golomon</span>
           </h1>
           <div className="text-lg text-slate-600 max-w-4xl mx-auto space-y-4">
@@ -353,7 +353,6 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                {/* Embedded Google Map with forced Name Title via URL parameters */}
                 <div className="mt-10 rounded-2xl overflow-hidden border border-white/20 h-48 sm:h-56 relative shadow-inner w-full flex-shrink-0">
                   <iframe 
                     src="https://maps.google.com/maps?q=Muthaiga%20Square,%20Nairobi,%20Kenya+(Muthaiga%20Square)&t=&z=14&ie=UTF8&iwloc=A&output=embed" 

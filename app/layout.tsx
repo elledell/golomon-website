@@ -5,7 +5,7 @@ import { ConvexClientProvider } from "./ConvexClientProvider";
 import TopBar from "./components/layout/TopBar";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/Footer";
-import FloatingAssistant from "./components/FloatingAssistant"; // <-- Import it here
+import FloatingAssistant from "./components/FloatingAssistant";
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -15,6 +15,9 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Golomon Limited | Technology Solutions Provider",
   description: "Progress, Powered By Technology.",
+  other: {
+    "impact-site-verification": "de2312d5-8870-42a9-8ece-aa54e64ea28b",
+  },
 };
 
 export default function RootLayout({

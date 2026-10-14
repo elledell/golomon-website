@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import Image from "next/image";
 import { MessageCircle, X, Send, Mail } from "lucide-react";
 
 // Custom WhatsApp SVG Icon
@@ -60,7 +61,7 @@ export default function FloatingAssistant() {
       let botReply = "Thanks for reaching out! One of our experts will assist you shortly. For immediate help, please use the WhatsApp or Email buttons below.";
 
       if (text === "Our services") {
-        botReply = "Our 6 core pillars are:\n• IT Consulting\n• Licensing & Procurement\n• Cloud Computing\n• Cybersecurity\n• Software & SaaS\n• AI & Automation\n\nWhich one can we help you with?";
+        botReply = "Our technology services and solutions include:\n\n• IT Consulting\n• Licensing & Procurement\n• Cloud Computing\n• Cybersecurity\n• Software & SaaS\n• AI & Automation\n\nWhich one can we help you with?";
       } else if (text === "Pricing") {
         botReply = "Our pricing is tailored to your specific enterprise requirements. Would you like to schedule a free business discovery consultation?";
       } else if (text === "Software & SaaS") {
@@ -93,8 +94,14 @@ export default function FloatingAssistant() {
           <div className="bg-[#001433] text-white p-4 flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="relative">
-                <div className="w-10 h-10 bg-golomon-primary rounded-full flex items-center justify-center font-bold text-lg">
-                  G
+                <div className="w-10 h-10 bg-golomon-primary rounded-full flex items-center justify-center overflow-hidden p-2 shadow-sm">
+                  <Image 
+                    src="/logo.png" 
+                    alt="Golomon Logo" 
+                    width={24} 
+                    height={24} 
+                    className="object-contain"
+                  />
                 </div>
                 <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-[#001433] rounded-full"></div>
               </div>

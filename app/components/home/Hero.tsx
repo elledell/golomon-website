@@ -127,7 +127,7 @@ export default function Hero() {
               href="/contact"
               className="bg-slate-900 text-white px-7 py-3.5 md:px-8 md:py-4 rounded-md font-semibold hover:bg-golomon-primary transition-colors shadow-md text-sm md:text-base"
             >
-              Talk to Our Expert
+              {currentSlide === slides.length - 1 ? "Request a Consultation" : "Talk to Our Experts"}
             </Link>
           </div>
         </div>

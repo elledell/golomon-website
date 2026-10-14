@@ -234,7 +234,7 @@ export default function Contact() {
                   </>
                 ) : (
                   <>
-                    Discuss Your Technology Needs
+                    Request a Consultation
                     <Send className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                   </>
                 )}

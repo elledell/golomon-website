@@ -151,7 +151,7 @@ export default function SolutionsPage() {
               </span>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-[1.15] tracking-tight mb-5">
-              Our 6 Core Technology <span className="text-golomon-secondary">Solutions & Services.</span>
+              Our  Technology <span className="text-golomon-secondary">Solutions & Services.</span>
             </h2>
             <p className="text-sm sm:text-base md:text-lg text-blue-100 leading-relaxed">
               Through our ecosystem of technology vendors, manufacturers, distributors, cloud providers, and specialist partners, we help organizations identify, acquire, implement, integrate, and manage fit-for-purpose technology solutions that deliver measurable business value and support sustainable growth.

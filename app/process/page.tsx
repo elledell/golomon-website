@@ -275,25 +275,33 @@ Your strategic technology partner, delivering innovative, reliable and scalable 
             </div>
           </div>
         </div>
-      </section>
-{/* 3. CTA Banner Section */}
-      <section className="w-full py-24 bg-[#F8FAFC] px-6 lg:px-12">
-        <div className="max-w-[1200px] mx-auto bg-white rounded-[2.5rem] shadow-xl p-10 sm:p-12 lg:p-20 relative overflow-hidden text-center border border-slate-100">
+      </section>{/* 3. CTA Banner Section (Bulletproofed against Forced Dark Mode) */}
+      <section className="w-full py-24 bg-[#F8FAFC] dark:bg-[#F8FAFC] px-6 lg:px-12">
+        <div 
+          className="max-w-[1200px] mx-auto rounded-[2.5rem] shadow-xl p-10 sm:p-12 lg:p-20 relative overflow-hidden text-center border border-slate-100 dark:border-slate-200"
+          style={{ backgroundColor: "#ffffff" }}
+        >
           
           {/* Circuit Nodes Background Image - Fixed Mobile Cropping */}
           <div className="absolute inset-0 z-0 pointer-events-none flex items-start justify-center">
             <img 
               src="/13.png" 
               alt="Circuit Nodes Background" 
-              className="w-full h-full max-w-[1400px] object-cover sm:object-contain object-top opacity-100 mix-blend-multiply"
+              className="w-full h-full max-w-[1400px] object-cover sm:object-contain object-top opacity-100 mix-blend-multiply dark:mix-blend-normal"
             />
           </div>
 
           <div className="relative z-10 flex flex-col items-center pt-8">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight max-w-4xl">
+            <h2 
+              className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-slate-900 mb-6 tracking-tight max-w-4xl"
+              style={{ color: "#0f172a" }}
+            >
               Align Enterprise Investments with Strategic Priorities and <span className="text-golomon-primary">Measurable Business Outcomes.</span>
             </h2>
-            <p className="text-slate-600 text-base sm:text-lg max-w-3xl mb-10 leading-relaxed">
+            <p 
+              className="text-base sm:text-lg max-w-3xl mb-10 leading-relaxed text-slate-600 dark:text-slate-600"
+              style={{ color: "#475569" }}
+            >
               Connect with our team to explore your business priorities and technology requirements or download our corporate profile for a comprehensive overview of our capabilities, solutions and service offerings.
             </p>
             
@@ -307,7 +315,8 @@ Your strategic technology partner, delivering innovative, reliable and scalable 
               <a
                 href="/Golomon Company Profile v2.pdf"
                 download="Golomon Company Profile v2.pdf"
-                className="bg-white border-2 border-slate-200 text-slate-700 px-8 py-4 rounded-full font-bold hover:border-golomon-primary hover:text-golomon-primary transition-colors flex items-center justify-center gap-2 text-sm sm:text-base w-full sm:w-auto"
+                className="border-2 border-slate-200 px-8 py-4 rounded-full font-bold hover:border-golomon-primary hover:text-golomon-primary transition-colors flex items-center justify-center gap-2 text-sm sm:text-base w-full sm:w-auto text-slate-700 dark:text-slate-700 dark:border-slate-300"
+                style={{ backgroundColor: "#ffffff" }}
               >
                 <Download className="w-5 h-5" /> Download Company Profile
               </a>
