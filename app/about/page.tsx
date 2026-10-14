@@ -434,7 +434,7 @@ export default function AboutPage() {
               href="/contact"
               className="inline-flex items-center gap-2 bg-golomon-secondary text-white px-8 py-4 rounded-md font-bold text-base md:text-lg hover:bg-orange-700 transition-colors shadow-lg"
             >
-              Talk to an Expert
+              Talk to Our Expert
               <ArrowRight className="w-5 h-5" />
             </Link>
             <a

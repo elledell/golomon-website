@@ -153,7 +153,9 @@ export default function ProcessPage() {
               Why Organizations Choose <span className="text-golomon-secondary">Golomon</span>
             </h2>
             <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto">
-              Your trusted Technology Solutions Provider (TSP) committed to excellence, accountability and sustainable growth.
+              Why Organizations Choose Golomon
+
+Your strategic technology partner, delivering innovative, reliable and scalable solutions with a commitment to excellence, accountability as well as sustainable business growth.
             </p>
           </div>
 

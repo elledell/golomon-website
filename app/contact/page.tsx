@@ -76,20 +76,25 @@ export default function ContactPage() {
   const SelectedIcon = selectedOption?.icon;
 
   return (
-    <main className="w-full bg-[#F8FAFC] flex flex-col pt-24 min-h-screen">
+    <main className="w-full bg-[#F8FAFC] flex flex-col min-h-screen">
       
       {/* Page Header */}
-      <section className="w-full pt-16 pb-12 bg-white border-b border-slate-200">
+      <section className="w-full pt-28 lg:pt-36 pb-16 bg-white border-b border-slate-200">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 text-center">
           <span className="text-golomon-secondary font-bold text-sm tracking-widest uppercase mb-4 block">
             Let's Talk
           </span>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 mb-6 tracking-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 mb-8 tracking-tight">
             Contact <span className="text-golomon-primary">Golomon</span>
           </h1>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Ready to build a stronger digital foundation? Reach out to our team to discuss your technology needs, request a quote, or schedule a consultation.
-          </p>
+          <div className="text-lg text-slate-600 max-w-4xl mx-auto space-y-4">
+            <p>
+              Equip your business with the right technology solutions to drive growth and innovation. Connect with Golomon to discuss your IT requirements, explore tailored solutions, request a proposal or schedule a consultation with our team.
+            </p>
+            <p>
+              We partner with businesses to deliver secure, scalable and innovative technology solutions that enhance operational efficiency, strengthen digital capabilities as well as support long-term business success.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -257,7 +262,7 @@ export default function ContactPage() {
                         </>
                       ) : (
                         <>
-                          Discuss Your Technology Needs
+                          Request a Consultation
                           <Send className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                         </>
                       )}
@@ -285,7 +290,6 @@ export default function ContactPage() {
               <div className="relative z-10 flex flex-col h-full">
                 <div>
                   <div className="flex items-center mb-6">
-                    {/* Updated to Talk to Our Experts */}
                     <span className="text-white font-bold text-sm tracking-widest uppercase">
                       Talk to Our Experts
                     </span>
