@@ -119,7 +119,7 @@ export default function SolutionsPage() {
 
           <div className="relative w-full h-[320px] sm:h-[400px] lg:h-[500px] flex items-center justify-center lg:justify-end">
             <Image 
-              src="/solutions.jfif"
+              src="/10.png"
               alt="Dashboard showcasing integrated scalable environments"
               fill
               className="object-contain lg:object-right"

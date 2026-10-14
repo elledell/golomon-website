@@ -3,10 +3,12 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   const navLinks = [
     { name: "Home", href: "/" },
@@ -15,13 +17,27 @@ export default function Navbar() {
     { name: "Our Process", href: "/process" },
   ];
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    // If clicking the link for the page we are already on, smoothly scroll to top
+    if (pathname === href) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+    // Always close the mobile menu on click
+    setIsOpen(false);
+  };
+
   return (
     <>
       <nav className="w-full sticky top-0 z-40 bg-white shadow-sm border-b border-gray-100 transition-all duration-300">
         <div className="max-w-[1400px] mx-auto px-4 lg:px-12 flex justify-between items-center h-20">
           
           {/* Brand Logo - Responsive Sizing */}
-          <Link href="/" className="flex items-center group w-fit">
+          <Link 
+            href="/" 
+            className="flex items-center group w-fit"
+            onClick={(e) => handleNavClick(e, "/")}
+          >
             <Image 
               src="/Wordmark.png" 
               alt="Golomon Wordmark" 
@@ -40,7 +56,12 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="font-medium text-[15px] text-slate-700 hover:text-golomon-secondary transition-colors py-1"
+                onClick={(e) => handleNavClick(e, link.href)}
+                className={`font-medium text-[15px] transition-colors py-1 ${
+                  pathname === link.href 
+                    ? "text-golomon-secondary" 
+                    : "text-slate-700 hover:text-golomon-secondary"
+                }`}
               >
                 {link.name}
               </Link>
@@ -52,6 +73,7 @@ export default function Navbar() {
             {/* Contact Us Button - Hidden on smaller screens */}
             <Link
               href="/contact"
+              onClick={(e) => handleNavClick(e, "/contact")}
               className="hidden sm:flex bg-golomon-secondary text-white px-4 py-2.5 lg:px-6 lg:py-2.5 rounded-md text-sm font-semibold hover:bg-orange-700 transition-colors shadow-sm"
             >
               Contact Us
@@ -110,8 +132,12 @@ export default function Navbar() {
             <Link
               key={link.name}
               href={link.href}
-              className="flex justify-between items-center py-4 border-b border-gray-50 font-medium text-gray-800 hover:text-golomon-secondary transition-colors"
-              onClick={() => setIsOpen(false)}
+              className={`flex justify-between items-center py-4 border-b border-gray-50 font-medium transition-colors ${
+                pathname === link.href 
+                  ? "text-golomon-secondary" 
+                  : "text-gray-800 hover:text-golomon-secondary"
+              }`}
+              onClick={(e) => handleNavClick(e, link.href)}
             >
               {link.name}
             </Link>
@@ -121,7 +147,7 @@ export default function Navbar() {
             <Link
               href="/contact"
               className="bg-golomon-secondary text-white text-center py-3.5 rounded-md font-bold shadow-sm hover:bg-orange-700 transition-colors"
-              onClick={() => setIsOpen(false)}
+              onClick={(e) => handleNavClick(e, "/contact")}
             >
               Contact Us
             </Link>

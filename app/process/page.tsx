@@ -282,7 +282,7 @@ export default function ProcessPage() {
           {/* Circuit Nodes Background Image - Fixed Cropping */}
           <div className="absolute inset-0 z-0 pointer-events-none flex items-start justify-center">
             <img 
-              src="/circui.jfif" 
+              src="/13.png" 
               alt="Circuit Nodes Background" 
               className="w-full max-w-[1400px] object-contain object-top opacity-100 mix-blend-multiply"
             />
