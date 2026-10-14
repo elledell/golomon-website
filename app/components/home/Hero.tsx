@@ -44,7 +44,7 @@ export default function Hero() {
     },
     {
       id: 4,
-      image: "/hero4.png", // REMEMBER: Change this if you rename the file to clear the cache!
+      image: "/hero-four.png", // REMEMBER: Change this if you rename the file to clear the cache!
       tagline: "SECURE & RESILIENT INFRASTRUCTURE.",
       title: "Building the Foundation for Your Digital Future",
       description: (
